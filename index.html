@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smelite.bg</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="bg-decor">
+  <img src="images/decor-red.png" class="decor decor-red" />
+  <img src="images/decor-green.png" class="decor decor-green" />
+  <img src="images/decor-black.png" class="decor decor-black" />
+  <img src="images/decor-white.png" class="decor decor-white" />
+</div>
+
+
+  <header>
+    <div class="logo">Smelite.bg</div>
+    <nav>
+      <a href="#home">Начало</a>
+      <a href="#crafts">Занаяти</a>
+      <a href="#masters">Майстори</a>
+      <a href="#shop">Нашата чаршия</a>
+      <a href="login.html" class="login-btn">Вход / Регистрация</a>
+      <a href="#faq">ЧЗВ</a>
+      <a href="#contact">Контакти</a>
+
+    </nav>
+  </header>
+
+  <!-- 🏠 НАЧАЛО -->
+  <section id="home" class="hero" data-aos="fade-up">
+  <div class="hero-decor">
+    <img src="images/decor-red.png" class="decor decor-red" alt="">
+    <img src="images/decor-green.png" class="decor decor-green" alt="">
+    <img src="images/decor-white.png" class="decor decor-white" alt="">
+    <img src="images/decor-black.png" class="decor decor-black" alt="">
+  </div>
+
+  <div class="hero-content">
+    <!-- Лява снимка -->
+    <div class="hero-left">
+      <img src="images/hero-img.png" alt="Майстор">
+    </div>
+
+    <!-- Текстов блок -->
+    <div class="hero-text">
+      <h1>Съхраняваме занаятите на България</h1>
+      <p>Открий майстори. Научи занаят. Подкрепи традициите.</p>
+      <a href="#crafts" class="btn">Разгледай занаятите</a>
+    </div>
+
+    <!-- Дясна снимка -->
+    <div class="hero-right">
+      <img src="images/photo2.png" alt="Резба">
+    </div>
+  </div>
+</section>
+
+
+  <!-- 🛠️ ЗАНАЯТИ -->
+ <section class="crafts fade-in" id="crafts">
+  <h1>Открий занаят</h1>
+  <div class="crafts-grid">
+    <div class="craft-card" data-aos="fade-left"> 
+      <img src="images/knife.jpg" alt="Ножарство">
+      <h3>Ножарство</h3>
+      <p>Изкуството на изработка на ръчно ковани ножове.</p>
+    </div>
+    <div class="craft-card" data-aos="fade-left">
+      <img src="images/pottery.jpg" alt="Грънчарство">
+      <h3>Грънчарство</h3>
+      <p>Форма, глина и традиция, вдъхнати в съдове с история.</p>
+    </div>
+    <div class="craft-card" data-aos="fade-left">
+      <img src="images/wood.jpg" alt="Дърворезба">
+      <h3>Дърворезба</h3>
+      <p>Декоративно изкуство върху дърво, носещо духа на миналото.</p>
+    </div>
+    <!-- Можеш да добавяш още -->
+  </div>
+</section>
+
+
+  <!-- 👤 МАЙСТОРИ -->
+ <section class="masters-section" id="masters">
+  <h2>Нашите майстори</h2>
+  <div class="masters-grid">
+    
+    <div class="master-card" data-aos="fade-up">
+  <img src="images/master1.jpg" alt="Майстор Иван">
+  <div class="master-info">
+    <h3>Майстор Иван</h3>
+    <p>Грънчар от Троян с 25 години опит в традиционната керамика.</p>
+    <div class="tags">
+      <span>Индивидуално</span>
+      <span>Групово</span>
+    </div>
+  </div>
+</div>
+
+
+    <div class="master-card" data-aos="fade-up">
+  <img src="images/master2.jpg" alt="Майстор Иван">
+  <div class="master-info">
+    <h3>Майстор Елена</h3>
+    <p>Грънчар от Кърджали с 25 години опит в традиционната керамика.</p>
+    <div class="tags">
+      <span>Индивидуално</span>
+      <span>Групово</span>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+
+
+
+  <!-- 🛍️ ЧАРШИЯ -->
+ <section class="shop fade-in" id="shop">
+     <div class="shop-bg"></div> <!-- Фоновото изображение с ефект -->
+  <h1>Нашата чаршия</h1>
+  <div class="product-grid">
+    <div class="product-card fade-up">
+      <img src="images/merch1.webp" alt="Суитшърт Роден Занаят">
+      <h3>Суитшърт "Роден Занаят"</h3>
+      <p>Удобен и стилен суитшърт, вдъхновен от българската традиция.</p>
+      <p class="price">45 лв.</p>
+      <a href="#" class="btn">Купи</a>
+    </div>
+
+    <div class="product-card fade-up">
+      <img src="images/merch2.webp" alt="Суитшърт Златни Ръце">
+      <h3>Суитшърт "Златни Ръце"</h3>
+      <p>Подкрепи майсторите с този уникален дизайн.</p>
+      <p class="price">49 лв.</p>
+      <a href="#" class="btn">Купи</a>
+    </div>
+    <!-- Можеш да добавяш още продукти -->
+  </div>
+</section>
+
+<!-- 🙋 ЧЗВ -->
+<section class="faq fade-in" id="faq">
+  <h1>Често задавани въпроси</h1>
+  <div class="faq-list">
+    <div class="faq-item fade-up">
+      <h3>Как да се запиша за урок при майстор?</h3>
+      <p>Можеш да избереш майстор от секцията с профили и да резервираш урок директно от профила му.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h3>Мога ли да участвам в групово обучение?</h3>
+      <p>Да! Много от майсторите предлагат и групови уъркшопи, които са отбелязани в описанията.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h3>Какви са методите на плащане?</h3>
+      <p>Плащането става сигурно през платформата с карта или наложен платеж при продукти от Чаршията.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- 📬 Контакт -->
+<section class="contact fade-in" id="contact">
+  <h1>Свържи се с нас</h1>
+  <form>
+    <input type="text" name="name" placeholder="Име" required>
+    <input type="email" name="email" placeholder="Имейл" required>
+    <textarea name="message" rows="5" placeholder="Съобщение" required></textarea>
+    <button type="submit">Изпрати</button>
+  </form>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h2>Smelite.bg</h2>
+      <p>Платформа за занаятчии и чираци</p>
+    </div>
+    
+    <div class="footer-links">
+        <a href="#home">Начало</a>
+      <a href="#crafts">Занаяти</a>
+      <a href="#masters">Майстори</a>
+      <a href="#shop">Нашата чаршия</a>
+      <a href="#faq">Въпроси</a>
+      <a href="#contact">Контакт</a>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#"><img src="images/facebook-icon.png" alt="Facebook" /></a>
+      <a href="#"><img src="images/instagram-icon.png" alt="Instagram" /></a>
+      <!-- Добави още икони при нужда -->
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Smelite.bg. Всички права запазени.</p>
+  </div>
+</footer>
+
+<script src="scroll-effect.js"></script>
+<script src="tilt.js"></script>
+<script src="scroll-animations.js"></script>
+<script src="scroll-animate.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+
+
+
+</body>
+</html>

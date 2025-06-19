@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вход</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #f2eee8;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    .login-box h1 {
+      margin-bottom: 24px;
+      color: #333;
+    }
+
+    .login-box input[type="email"],
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    .login-box button {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+
+    .login-box button:hover {
+      background-color: #256d27;
+    }
+
+    .login-box .link {
+      margin-top: 16px;
+      display: block;
+      font-size: 0.95em;
+      color: #2e7d32;
+      text-decoration: none;
+    }
+
+    .login-box .link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h1>Вход</h1>
+    <form>
+      <input type="email" placeholder="Имейл" required />
+      <input type="password" placeholder="Парола" required />
+      <button type="submit">Влез</button>
+    </form>
+    <a href="register.html" class="link">Нямаш акаунт? Регистрирай се безплатно!</a>
+  </div>
+</body>
+</html>

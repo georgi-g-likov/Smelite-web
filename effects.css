@@ -1,0 +1,60 @@
+
+/* ---------- STICKY HEADER ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #f2eee8;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* ---------- SMOOTH SECTION TRANSITIONS ---------- */
+section {
+  padding: 80px 20px;
+  transition: background-color 0.5s ease;
+}
+
+/* ---------- BUTTON HOVER ANIMATION ---------- */
+.btn:hover {
+  transform: translateY(-3px) rotate(-1deg);
+}
+
+/* ---------- GLASS EFFECT FOR CARDS ---------- */
+.craft-card,
+.master-card,
+.product-card {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ---------- IMAGE ZOOM ON HOVER ---------- */
+.craft-card img,
+.master-card img,
+.product-card img {
+  transition: transform 0.4s ease;
+}
+
+.craft-card:hover img,
+.master-card:hover img,
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ---------- SCROLL ANIMATIONS FROM LEFT/RIGHT ---------- */
+.fade-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease;
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-left.visible,
+.fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
