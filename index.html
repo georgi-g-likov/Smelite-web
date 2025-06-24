@@ -6,39 +6,52 @@
   <title>Smelite.bg</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
-<div class="bg-decor">
+<!-- <div class="bg-decor">
   <img src="images/decor-red.png" class="decor decor-red" />
   <img src="images/decor-green.png" class="decor decor-green" />
   <img src="images/decor-black.png" class="decor decor-black" />
   <img src="images/decor-white.png" class="decor decor-white" />
-</div>
+</div> -->
 
 
-  <header>
-    <div class="logo">Smelite.bg</div>
-    <nav>
-      <a href="#home">Начало</a>
-      <a href="#crafts">Занаяти</a>
-      <a href="#masters">Майстори</a>
-      <a href="#shop">Нашата чаршия</a>
-      <a href="login.html" class="login-btn">Вход / Регистрация</a>
-      <a href="#faq">ЧЗВ</a>
-      <a href="#contact">Контакти</a>
+  <header class="main-header">
+  <div class="logo">Smelite.bg</div>
+  
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#home">МИСИЯ</a></li>
+      <li><a href="#crafts">ЗАНАЯТИ</a></li>
+      <li><a href="#masters">МАЙСТОРИ</a></li>
+      <li><a href="#shop">НАШАТА ЧАРШИЯ</a></li>
+      <li><a href="#faq">КАК РАБОТИ?</a></li>
+      <li><a href="#contact">СВЪРЖИ СЕ С НАС</a></li>
+    </ul>
+  </nav>
 
-    </nav>
-  </header>
+  <div class="header-actions">
+    <a href="login.html" class="login-btn">Вход / Регистрация</a>
+    <a href="#" class="support-btn">
+      ПОДКРЕПИ НИ <span class="arrow">→</span>
+    </a>
+  </div>
+</header>
+
 
   <!-- 🏠 НАЧАЛО -->
   <section id="home" class="hero" data-aos="fade-up">
   <div class="hero-decor">
-    <img src="images/decor-red.png" class="decor decor-red" alt="">
-    <img src="images/decor-green.png" class="decor decor-green" alt="">
-    <img src="images/decor-white.png" class="decor decor-white" alt="">
-    <img src="images/decor-black.png" class="decor decor-black" alt="">
+    <!-- Вътре в <body> -->
+<img src="images/decor-red.png" class="decor decor-red" />
+<img src="images/decor-black.png" class="decor decor-black" />
+<img src="images/decor-green.png" class="decor decor-green" />
+<img src="images/decor-beige.png" class="decor decor-beige" />
+<img src="images/decor-white.png" class="decor decor-white" />
   </div>
 
   <div class="hero-content">
@@ -61,64 +74,112 @@
   </div>
 </section>
 
-
-  <!-- 🛠️ ЗАНАЯТИ -->
- <section class="crafts fade-in" id="crafts">
-  <h1>Открий занаят</h1>
-  <div class="crafts-grid">
-    <div class="craft-card" data-aos="fade-left"> 
+  
+<!-- <ЗАНАЯТИ> -->
+<section class="crafts" id="crafts">
+  <!-- ГОРНА декоративна част (остава!) -->
+  <div class="crafts-hero" data-aos="fade-up" style="position:relative;">
+    <div class="crafts-hero-bg"></div>
+  <div class="crafts-hero-main" style="display: flex; align-items: flex-start; position: relative;">
+  <div class="crafts-hero-img">
+    <img src="images/featured-craft.jpg" alt="Керамика">
+  </div>
+  <div class="crafts-hero-decor">
+   <img src="images/decor-yellow.png" class="decor-leaf yellow" data-aos="fade-right" data-aos-delay="150" alt="decor">
+      <img src="images/decor-brown.png" class="decor-leaf brown" data-aos="fade-right" data-aos-delay="300" alt="decor">
+  </div>
+</div>
+    <h2 class="crafts-hero-title" data-aos="fade-left" data-aos-delay="350">Занаяти</h2>
+  </div>
+  <!-- НОВИЯТ долен блок със занаяти като овални снимки + текст -->
+  <div class="crafts-carousel">
+  <button class="carousel-arrow left">&lt;</button>
+  <div class="crafts-oval-list">
+    <div class="crafts-oval-item" data-aos="fade-up" data-aos-delay="150">
       <img src="images/knife.jpg" alt="Ножарство">
       <h3>Ножарство</h3>
       <p>Изкуството на изработка на ръчно ковани ножове.</p>
     </div>
-    <div class="craft-card" data-aos="fade-left">
+    <div class="crafts-oval-item" data-aos="fade-up" data-aos-delay="250">
       <img src="images/pottery.jpg" alt="Грънчарство">
       <h3>Грънчарство</h3>
       <p>Форма, глина и традиция, вдъхнати в съдове с история.</p>
     </div>
-    <div class="craft-card" data-aos="fade-left">
+    <div class="crafts-oval-item" data-aos="fade-up" data-aos-delay="350">
       <img src="images/wood.jpg" alt="Дърворезба">
       <h3>Дърворезба</h3>
       <p>Декоративно изкуство върху дърво, носещо духа на миналото.</p>
     </div>
-    <!-- Можеш да добавяш още -->
+     <div class="crafts-oval-item" data-aos="fade-up" data-aos-delay="350">
+      <img src="images/wood.jpg" alt="Дърворезба">
+      <h3>Дърворезба</h3>
+      <p>Декоративно изкуство върху дърво, носещо духа на миналото.</p>
+    </div>
+     <div class="crafts-oval-item" data-aos="fade-up" data-aos-delay="350">
+      <img src="images/wood.jpg" alt="Дърворезба">
+      <h3>Дърворезба</h3>
+      <p>Декоративно изкуство върху дърво, носещо духа на миналото.</p>
+    </div>
+    <!-- Още елементи -->
   </div>
+  <button class="carousel-arrow right">&gt;</button>
+</div>
+
 </section>
 
 
   <!-- 👤 МАЙСТОРИ -->
  <section class="masters-section" id="masters">
-  <h2>Нашите майстори</h2>
-  <div class="masters-grid">
-    
-    <div class="master-card" data-aos="fade-up">
-  <img src="images/master1.jpg" alt="Майстор Иван">
-  <div class="master-info">
-    <h3>Майстор Иван</h3>
-    <p>Грънчар от Троян с 25 години опит в традиционната керамика.</p>
-    <div class="tags">
-      <span>Индивидуално</span>
-      <span>Групово</span>
-    </div>
+  <div class="masters-header-row">
+    <div class="masters-title" data-aos="fade-left" data-aos-delay="350">Майстори</div>
   </div>
-</div>
-
-
-    <div class="master-card" data-aos="fade-up">
-  <img src="images/master2.jpg" alt="Майстор Иван">
-  <div class="master-info">
-    <h3>Майстор Елена</h3>
-    <p>Грънчар от Кърджали с 25 години опит в традиционната керамика.</p>
-    <div class="tags">
-      <span>Индивидуално</span>
-      <span>Групово</span>
+  <div class="masters-list">
+    <div class="master-oval-card">
+      <img src="images/master1.jpg" alt="Майстор Иван">
+      <div class="master-oval-info">
+        <div class="master-oval-name">Майстор Иван</div>
+        <div class="master-oval-craft">Грънчар</div>
+      </div>
     </div>
-  </div>
-</div>
-
-
+    <div class="master-oval-card">
+      <img src="images/master2.jpg" alt="Майстор Елена">
+      <div class="master-oval-info">
+        <div class="master-oval-name">Майстор Елена</div>
+        <div class="master-oval-craft">Грънчар</div>
+      </div>
+    </div>
+    <div class="master-oval-card">
+      <img src="images/master1.jpg" alt="Майстор Иван">
+      <div class="master-oval-info">
+        <div class="master-oval-name">Майстор Иван</div>
+        <div class="master-oval-craft">Грънчар</div>
+      </div>
+    </div>
+    <div class="master-oval-card">
+      <img src="images/master2.jpg" alt="Майстор Елена">
+      <div class="master-oval-info">
+        <div class="master-oval-name">Майстор Елена</div>
+        <div class="master-oval-craft">Грънчар</div>
+      </div>
+    </div>
+    <div class="master-oval-card">
+      <img src="images/master1.jpg" alt="Майстор Иван">
+      <div class="master-oval-info">
+        <div class="master-oval-name">Майстор Иван</div>
+        <div class="master-oval-craft">Грънчар</div>
+      </div>
+    </div>
+    <div class="master-oval-card">
+      <img src="images/master2.jpg" alt="Майстор Елена">
+      <div class="master-oval-info">
+        <div class="master-oval-name">Майстор Елена</div>
+        <div class="master-oval-craft">Грънчар</div>
+      </div>
+    </div>
+    <!-- Още карти -->
   </div>
 </section>
+
 
 
 
@@ -147,6 +208,8 @@
   </div>
 </section>
 
+
+
 <!-- 🙋 ЧЗВ -->
 <section class="faq fade-in" id="faq">
   <h1>Често задавани въпроси</h1>
@@ -165,6 +228,8 @@
     </div>
   </div>
 </section>
+
+
 
 
 <!-- 📬 Контакт -->
@@ -210,7 +275,9 @@
 <script src="tilt.js"></script>
 <script src="scroll-animations.js"></script>
 <script src="scroll-animate.js"></script>
+<script src="carusel.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
 <script>
   AOS.init({
     duration: 800,
