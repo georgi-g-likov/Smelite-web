@@ -8,7 +8,7 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -46,23 +46,37 @@
   <!-- 🏠 НАЧАЛО -->
   <section id="home" class="hero" data-aos="fade-up">
   <div class="hero-decor">
-    <!-- Вътре в <body> -->
-<img src="images/decor-red.png" class="decor decor-red" />
-<img src="images/decor-black.png" class="decor decor-black" />
-<img src="images/decor-green.png" class="decor decor-green" />
-<img src="images/decor-beige.png" class="decor decor-beige" />
-<img src="images/decor-white.png" class="decor decor-white" />
+
+      <!-- ЧЕРВЕНО листо -->
+  <!-- ЧЕРВЕНО овал вляво (както досега) -->
+  <svg class="decor decor-brown" viewBox="0 0 400 400">
+    <path d="M 400 200 Q 380 70 199 -1 Q 197 51 198 95 Q 198 169 199 186 Q 196 302 400 348 Z" fill="#ff0000"/>
+  </svg>
+  <!-- Голяма бяла елипса горе вдясно (зад снимките) -->
+  <svg class="decor decor-white-large" viewBox="0 0 600 400">
+    <path d="M 759 259 Q 607 61 439 17 Q 155 -58 -2 -10 Q 32 261 293 318 Q 601 356 782 330 Z" fill="#fff"/>
+  </svg>
+  <!-- Черно (тъмно) листо долу вляво под лявата снимка -->
+  <svg class="decor decor-black" viewBox="0 0 260 150">
+    <path d="M 10 120 Q 23 43 116 24 Q 217 19 264 30 Q 261 49 229 90 Q 136 162 10 120 Z" fill="#222"/>
+  </svg>
+  <!-- Зелено листо под дясната снимка -->
+  <svg class="decor decor-green" viewBox="0 0 330 120">
+    <path d="M 43 112 Q 80 10 185 -15 Q 236 -33 280 -25 Q 256 66 153 128 Q 77 166 27 158 Z" fill="#008000"/>
+  </svg>
   </div>
+  
 
   <div class="hero-content">
     <!-- Лява снимка -->
-    <div class="hero-left">
+  <div class="hero-left">
       <img src="images/hero-img.png" alt="Майстор">
     </div>
 
+
     <!-- Текстов блок -->
     <div class="hero-text">
-      <h1>Съхраняваме занаятите на България</h1>
+      <h1>Нашата мисия</h1>
       <p>Открий майстори. Научи занаят. Подкрепи традициите.</p>
       <a href="#crafts" class="btn">Разгледай занаятите</a>
     </div>
@@ -182,35 +196,62 @@
 
 
 
+<!-- Как работи -->
+<section class="how-it-works">
+  <h2 class="section-title">КАК РАБОТИ</h2>
+  <div class="shapes-row">
+  <!-- Лява форма -->
+  <div class="shape shape-apprentice" data-aos="fade-up" data-aos-delay="10">
+    <svg viewBox="0 0 420 400" class="shape-svg">
+      <path d="M -70 9 Q 3 21 137 26 Q 330 15 420 100 Q 452 162 430 310 Q 420 420 225 414 Q -25 440 1 101 Z" fill="#9d5c28"/>
+    </svg>
+    <div class="dot"></div>
+    <div class="shape-content">
+      <h3>ЗА ЧИРАЦИ</h3>
+      <p>Discover how Next Gen Skills is transforming lives with practical education.</p>
+    </div>
+  </div>
+  <!-- Централна форма -->
+  <div class="shape shape-master"data-aos="fade-up" data-aos-delay="1000">
+    <svg viewBox="0 0 420 400" class="shape-svg">
+      <path d="M 18 169 Q 10 60 200 35 Q 330 15 420 100 Q 455 160 444 469 Q 88 536 42 418 Q 10 365 17 199 Z" fill="#7c876a"/>
+    </svg>
+    <div class="dot"></div>
+    <div class="shape-content">
+      <h3>ЗА МАЙСТОРИ</h3>
+      <p>Discover how Next Gen Skills is transforming lives with practical education.</p>
+    </div>
+  </div>
+  <!-- Дясна форма -->
+  <div class="shape shape-customer" data-aos="fade-up" data-aos-delay="2000">
+    <svg viewBox="0 0 420 400" class="shape-svg">
+      <path d="M 547 3 Q 457 0 220 0 Q 0 0 0 200 Q 0 400 220 400 Q 458 388 441 105 Z" fill="#e5ccae"/>
+    </svg>
+    <div class="dot"></div>
+    <div class="shape-content" style="color:#222;">
+      <h3>ЗА МУЩЕРИИ</h3>
+      <p>Discover how Next Gen Skills is transforming lives with practical education.</p>
+    </div>
+  </div>
+</div>
+
+</section>
 
 
   <!-- 🛍️ ЧАРШИЯ -->
  <section class="shop fade-in" id="shop">
-     <div class="shop-bg"></div> <!-- Фоновото изображение с ефект -->
+     <div class="shop-bg" data-aos="zoom-in"></div> <!-- Фоновото изображение с ефект -->
   <h1>Нашата чаршия</h1>
-  <div class="product-grid">
-    <div class="product-card fade-up">
-      <img src="images/merch1.webp" alt="Суитшърт Роден Занаят">
-      <h3>Суитшърт "Роден Занаят"</h3>
-      <p>Удобен и стилен суитшърт, вдъхновен от българската традиция.</p>
-      <p class="price">45 лв.</p>
-      <a href="#" class="btn">Купи</a>
-    </div>
-
-    <div class="product-card fade-up">
-      <img src="images/merch2.webp" alt="Суитшърт Златни Ръце">
-      <h3>Суитшърт "Златни Ръце"</h3>
-      <p>Подкрепи майсторите с този уникален дизайн.</p>
-      <p class="price">49 лв.</p>
-      <a href="#" class="btn">Купи</a>
-    </div>
-    <!-- Можеш да добавяш още продукти -->
-  </div>
+  <div class="shop-card green" data-aos="fade-left" data-aos-delay="200" style="top: 80px; left: 75%; ">Чаршията</div>
+  <div class="shop-card brown" data-aos="fade-right" data-aos-delay="350" style="top: 240px; left: 8%;">Блог</div>
+  <div class="shop-card beige" data-aos="fade-up" data-aos-delay="500" style="bottom: 120px; right: 6%;">Вход</div>
+  <h1 data-aos="fade-down" data-aos-delay="700">Нашата чаршия</h1>
+<button class="btn-float" data-aos="fade-right" data-aos-delay="950">Разходи се</button>
 </section>
 
 
 
-<!-- 🙋 ЧЗВ -->
+<!-- 🙋 ЧЗВ
 <section class="faq fade-in" id="faq">
   <h1>Често задавани въпроси</h1>
   <div class="faq-list">
@@ -232,8 +273,8 @@
 
 
 
-<!-- 📬 Контакт -->
-<section class="contact fade-in" id="contact">
+📬 Контакт -->
+<!-- <section class="contact fade-in" id="contact">
   <h1>Свържи се с нас</h1>
   <form>
     <input type="text" name="name" placeholder="Име" required>
@@ -241,7 +282,7 @@
     <textarea name="message" rows="5" placeholder="Съобщение" required></textarea>
     <button type="submit">Изпрати</button>
   </form>
-</section>
+</section> -->
 
 <footer class="site-footer">
   <div class="footer-content">
@@ -276,6 +317,7 @@
 <script src="scroll-animations.js"></script>
 <script src="scroll-animate.js"></script>
 <script src="carusel.js"></script>
+<script src="paraclas.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
@@ -284,7 +326,6 @@
     once: true
   });
 </script>
-
 
 
 </body>

@@ -82,26 +82,69 @@ body {
 
  /* ХОУМ ПЕЙДЖ */
 .hero {
-  background: linear-gradient(to right, #f3efe8, #e8e4d9);
-  padding: 80px 40px;
   position: relative;
+  min-height: 700px;
+  background: #f5f3ed;
   overflow: hidden;
 }
-
-.hero-decor img.decor {
+.hero-decor {
   position: absolute;
-  z-index: 0; /* нека бъде зад текста и снимките */
-  opacity: 0.7; /* по-видимо */
-  max-width: 360px; /* по-голям */
+  left: 0; top: 0;
+  width: 100vw; height: 100%;
   pointer-events: none;
-  height: auto;
-  animation: floatUpDown 6s ease-in-out infinite, pulse 8s ease-in-out infinite;
+  z-index: 1;
+}
+.decor { position: absolute; z-index: 2; }
+
+/* Кафявото (ляво) */
+.decor-brown {
+  left: -220px;
+  top: -10px;
+  width: 430px; height: 410px;
+  z-index: 2;
+  
+}
+/* Бяло (горе вдясно, зад снимките) */
+.decor-white-large {
+  right: 360px;
+  top: 0;
+  width: 420px; height: 270px;
+  z-index: 1;
+ 
+}
+/* Черно (долу ляво под лявата снимка) */
+.decor-black {
+  left: -30px;
+  bottom: 205px;
+  width: 250px; height: 140px;
+  transform: rotate(-19deg);
+  z-index: 3;
+  
+}
+/* Зелено (долу, под дясната снимка) */
+.decor-green {
+  right: 0vw;
+  bottom: 500px;
+  width: 420px; height: 220px;
+  transform: rotate(-8deg);
+  z-index: 3;
+
 }
 
-.decor-red { top: 5%; left: -60px; transform: rotate(20deg); }
-.decor-green { top: 10%; right: -40px; transform: rotate(-15deg); }
-.decor-white { bottom: 8%; right: -50px; transform: rotate(10deg); }
-.decor-black { bottom: 12%; left: -50px; transform: rotate(-25deg); }
+
+@keyframes decorPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
 
 .hero-content {
   display: grid;
@@ -122,8 +165,8 @@ body {
 }
 
 .hero-left img {
- width: 480px;
-  height: 360px;
+ width: 530px;
+  height: 420px;
   overflow: hidden;
   border-radius: 160px / 120px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
@@ -135,6 +178,8 @@ body {
   transform: translateY(-30px);
 }
 
+
+
 .hero-text {
   grid-column: 1 / 2;
   margin-top: -20px;
@@ -144,7 +189,9 @@ body {
 .hero-text h1 {
   font-size: 36px;
   margin-bottom: 20px;
-  color: #222;
+  font-family: 'Caveat', cursive;
+  font-size: 3.5rem;
+  color: #35312c;
 }
 
 .hero-text p {
@@ -170,6 +217,8 @@ body {
 }
 
 .hero-right {
+   margin-right: -280px;
+  margin-top: 200px;
   grid-column: 2 / 3;
   grid-row: 1 / 3;
   display: flex;
@@ -581,23 +630,149 @@ body {
 } */
 
 
+
+
+/* как работи */
+
+body {
+  background: #f8f4ee; /* Светъл бежов фон */
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.how-it-works {
+  padding: 60px 0 0 0;
+  position: relative;
+}
+
+.section-title {
+  font-family: 'Caveat', cursive;
+  font-size: 48px;
+  letter-spacing: 4px;
+  color: #222;
+  text-align: right;
+  margin-right: 90px;
+  margin-bottom: 30px;
+}
+
+.shapes-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 32px;
+}
+
+.shape {
+  position: relative;
+  width: 620px;
+  height: 600px;
+  overflow: visible;
+}
+
+.shape-svg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none; /* за да не пречи на кликвания */
+}
+
+.dot {
+  position: absolute;
+  left: 38px;
+  top: 38px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 2;
+}
+
+.shape-content {
+  position: absolute;
+  left: 65px;
+  top: 260px;
+  z-index: 2;
+  max-width: 75%;
+  color: #fff; /* сменяй на #222 при нужда */
+}
+
+.shape-content h3 {
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 0 16px 0;   /* най-важното: margin-bottom да не е 0! */
+  color: inherit;
+}
+
+.shape-content p {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 18px;
+  margin: 0;
+  color: #fff; /* или #222 за светъл фон */
+  opacity: 0.85;
+}
+.shape-apprentice h3,
+.shape-apprentice p {
+  color: #fff;
+}
+.shape-customer h3,
+.shape-customer p {
+  color: #222;
+}
+
+@media (max-width: 1200px) {
+  .shapes-row {
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+  .shape {
+    width: 95vw;
+    max-width: 410px;
+  }
+  .section-title {
+    text-align: center;
+    margin-right: 0;
+  }
+}
+
+.shape-apprentice {
+  margin-left: -60px; /* Или колкото трябва, докато стигне до самия ръб */
+}
+.shape-master {
+  margin-bottom: 100px; /* Пример – пробвай 30-60px според вкуса ти */
+}
+.shape-customer{
+  margin-bottom: 160px;
+  margin-right: -60px;
+}
+
+
+
+  /* чершията */
 .shop {
-  padding: 100px 20px;
-  background-color: transparent;
-  text-align: center;
+ background: linear-gradient(120deg, #7c4b27 0%, #b98557 100%);
+  position: relative;
+  min-height: 950px;
+  overflow: hidden;
+  padding: 120px 0 80px 0;
 }
 
 .shop h1 {
-  position: absolute;
+   position: absolute;
+  right: 10vw;
   top: 40px;
-  right: 60px;
-  font-size: 36px;
-  color: #ffffff;
-  font-weight: bold;
-  z-index: 3; /* Над всичко */
+  z-index: 3;
+  color: #fff;
+  font-size: 2.7rem;
+  font-family: 'Caveat', cursive;
 }
 
-.product-grid {
+/* .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
@@ -656,7 +831,7 @@ body {
   font-weight: bold;
   color: #2e7d32;
   font-size: 1.1em;
-}
+} */
 
 .shop-section {
   position: relative;
@@ -666,15 +841,38 @@ body {
 .shop-bg {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 120%;
-  height: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 850px;     /* Примерно! Може да коригираш */
+  height: 800px;
+  border-radius: 50%;
   background-image: url("images/shop-bg.jpg");
   background-size: cover;
   background-position: center;
   z-index: 0;
   pointer-events: none;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.08);
 }
+
+.shop-card {
+  position: absolute;
+  min-width: 230px;
+  min-height: 80px;
+  padding: 28px 54px;
+  font-size: 2rem;
+  font-family: 'Caveat', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px 0 50px 0;
+  z-index: 2;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  color: #232323;
+  letter-spacing: 1px;
+}
+.shop-card.green  { background: #b6c7a4; }
+.shop-card.brown  { background: #93542d; color: #fff; }
+.shop-card.beige  { background: #e9ddc8; }
 
 
 .shop-content {
