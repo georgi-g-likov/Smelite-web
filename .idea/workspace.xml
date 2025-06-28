@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4126542-b800-4336-b68e-8c2d15608340" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
+    <list default="true" id="184617e0-35f3-4070-8092-a7cdccb69c7c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/config/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +25,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
   "associatedIndex": 8
 }]]></component>
-  <component name="ProjectId" id="2z8tuXDdxcMm3o7NRiEglAQRN8K" />
+  <component name="ProjectId" id="2z8yyRaK78d0HjnqL5SCXv6U7o7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -33,11 +43,11 @@
 }]]></component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c4126542-b800-4336-b68e-8c2d15608340" name="Changes" comment="" />
-      <created>1751124750437</created>
+      <changelist id="184617e0-35f3-4070-8092-a7cdccb69c7c" name="Changes" comment="" />
+      <created>1751127249896</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1751124750437</updated>
+      <updated>1751127249896</updated>
     </task>
     <servers />
   </component>
