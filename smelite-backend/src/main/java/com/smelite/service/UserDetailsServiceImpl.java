@@ -1,7 +1,8 @@
-package com.smelite.security;
+package com.smelite.service;
 
 import com.smelite.entity.User;
 import com.smelite.repository.UserRepository;
+import com.smelite.security.CustomUserDetails;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
