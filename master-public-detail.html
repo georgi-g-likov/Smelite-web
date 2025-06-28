@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>Профил на майстор | Смелите</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section class="master-profile-section">
+    <div class="master-header">
+      <img src="images/avatar-master1.png" alt="" class="master-avatar">
+      <div class="master-main-info">
+        <div class="master-name">Георги Колев</div>
+        <div class="master-type">Дърворезба</div>
+        <div class="master-location">Велико Търново</div>
+        <div class="master-exp">15 години опит</div>
+        <div class="master-rating">⭐ 4.9 (27 отзива)</div>
+        <div class="master-desc">
+          Занимавам се с дърворезба от 15 години. Обичам да предавам занаята на новите поколения! Предлагам индивидуални и групови обучения в моето ателие.
+        </div>
+        <div class="master-profile-stats">
+          <div class="profile-stat"><div class="stat-count">7</div><div class="stat-label">Курсове</div></div>
+          <div class="profile-stat"><div class="stat-count">21</div><div class="stat-label">Ученици</div></div>
+        </div>
+        <button class="master-contact-btn">Свържи се с майстора</button>
+      </div>
+    </div>
+    <div class="master-gallery">
+      <div class="gallery-list">
+        <img src="images/portfolio1.jpg" alt="">
+        <img src="images/portfolio2.jpg" alt="">
+        <img src="images/portfolio3.jpg" alt="">
+        <!-- още снимки -->
+      </div>
+    </div>
+    <div class="master-booking-section">
+  <form class="booking-form" onsubmit="handleBookingSubmit(event)" style="flex:1;">
+    <h2 style="font-family:'Caveat',cursive;color:#b05a17;text-align:center;font-size:1.4rem;margin-bottom:18px;">Резервирай урок</h2>
+    <label for="lesson-type">Тип обучение:</label>
+    <div class="booking-type-group">
+      <label><input type="radio" name="lesson-type" value="group" checked> Групово</label>
+      <label><input type="radio" name="lesson-type" value="individual"> Индивидуално</label>
+    </div>
+    <label for="date">Дата:</label>
+    <select id="date" required>
+      <option value="">Избери дата</option>
+      <option>21.07.2025</option>
+      <option>28.07.2025</option>
+      <option>03.08.2025</option>
+    </select>
+    <label for="count">Брой участници:</label>
+    <input type="number" id="count" min="1" max="8" value="1" required>
+    <label for="name">Име и фамилия:</label>
+    <input type="text" id="name" required placeholder="Вашето име">
+    <label for="email">Имейл:</label>
+    <input type="email" id="email" required placeholder="user@email.com">
+    <label for="phone">Телефон:</label>
+    <input type="tel" id="phone" required placeholder="+359 88 123 4567">
+    <label for="notes">Коментар (по избор):</label>
+    <textarea id="notes" rows="2" placeholder="Специални изисквания, бележки…"></textarea>
+    <div class="booking-price">Цена: 50-80 лв.</div>
+    <button class="booking-btn" type="submit">Резервирай</button>
+  </form>
+  <div class="booking-success" style="display:none;text-align:center;color:#4a8429;background:#e3f6da;border-radius:14px;margin-top:24px;padding:15px 0;font-size:1.15rem;">
+    Вашата резервация е приета! Ще се свържем с Вас за потвърждение.
+  </div>
+</div>
+    <div class="master-reviews">
+      <h3>Отзиви от чираци</h3>
+      <ul class="reviews-list">
+        <li><span class="review-author">@stefanimi</span> Много търпелив и вдъхновяващ майстор!</li>
+        <li><span class="review-author">@vasilp</span> Научих страхотни нови техники!</li>
+        <!-- още отзиви -->
+      </ul>
+    </div>
+  </section>
+  <script>
+function handleBookingSubmit(e) {
+  e.preventDefault();
+  document.querySelector('.booking-form').style.display = 'none';
+  document.querySelector('.booking-success').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

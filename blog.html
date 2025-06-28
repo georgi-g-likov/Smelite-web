@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>Блог | Смелите</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section class="blog-section">
+    <h1 class="blog-title">Блог & Истории</h1>
+    <div class="blog-list" id="blogList"></div>
+  </section>
+
+  <!-- Модал за статия -->
+  <div class="modal-bg" id="blogModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-meta" id="modalMeta"></div>
+      <img id="modalImg" class="modal-img" src="" alt="" style="display:none;">
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    // Dummy blog posts (замества се от бекенд/база)
+    const blogPosts = [
+      {
+        title: "Как дърворезбата промени моя живот",
+        date: "07.06.2025",
+        category: "Занаятчийство",
+        image: "images/blog1.jpg",
+        snippet: "Историята на един млад майстор, който открива нов път чрез традиционните занаяти...",
+        body: `<p>Всичко започна, когато бях на 14 години и за пръв път хванах дърворезбарския нож в ръка...</p>
+        <p>С годините открих своя стил, създадох свое ателие и вече обучавам десетки чираци...</p>
+        <p>Днес искам да споделя тази страст с младите, за да продължим заедно традицията...</p>`
+      },
+      {
+        title: "Майстор Мария за керамиката и ученичките й",
+        date: "15.05.2025",
+        category: "Интервю",
+        image: "images/blog2.jpg",
+        snippet: "Майстор Мария споделя опита си с новото поколение и страстта към керамиката...",
+        body: `<p>Мария Иванова от Пловдив предава занаята вече над 20 години...</p>
+        <p>В тази статия ще разберете какво я вдъхновява и как се работи с ученици...</p>`
+      },
+      // Още постове...
+    ];
+
+    // Рендира всички блог постове
+    function renderBlogList() {
+      const list = document.getElementById('blogList');
+      list.innerHTML = '';
+      blogPosts.forEach((post, i) => {
+        const card = document.createElement('div');
+        card.className = 'blog-card';
+        card.innerHTML = `
+          <img src="${post.image}" class="blog-img" alt="">
+          <div class="blog-meta">${post.date} · <b>${post.category}</b></div>
+          <div class="blog-headline">${post.title}</div>
+          <div class="blog-snippet">${post.snippet}</div>
+          <button class="blog-readmore-btn" onclick="openModal(${i})">Прочети</button>
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    // Открива модала за статия
+    function openModal(i) {
+      const post = blogPosts[i];
+      document.getElementById('modalTitle').textContent = post.title;
+      document.getElementById('modalMeta').textContent = post.date + " · " + post.category;
+      document.getElementById('modalBody').innerHTML = post.body;
+      const img = document.getElementById('modalImg');
+      if(post.image){
+        img.src = post.image;
+        img.style.display = '';
+      } else {
+        img.style.display = 'none';
+      }
+      document.getElementById('blogModal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('blogModal').style.display = 'none';
+    }
+    renderBlogList();
+  </script>
+</body>
+</html>

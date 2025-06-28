@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>Чаршия | Смелите</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <section class="shop-section">
+    <h1 class="shop-title">Чаршия – Мърчът на Смелите</h1>
+    <div class="shop-products">
+      <div class="product-card">
+        <img src="images/merch1.webp" class="product-img" alt="Суитшърт Роден Занаят">
+        <div class="product-title">Суитшърт "Роден Занаят"</div>
+        <div class="product-desc">Удобен и стилен суитшърт, вдъхновен от българската традиция.</div>
+        <div class="product-price">45 лв.</div>
+        <button class="product-btn">Купи</button>
+      </div>
+      <div class="product-card">
+        <img src="images/merch2.webp" class="product-img" alt="Тениска Чирак">
+        <div class="product-title">Тениска "Чирак"</div>
+        <div class="product-desc">Базова тениска за чираци със специално послание.</div>
+        <div class="product-price">25 лв.</div>
+        <button class="product-btn">Купи</button>
+      </div>
+      <div class="product-card">
+        <img src="images/merch3.webp" class="product-img" alt="Тениска Майстор">
+        <div class="product-title">Тениска "Майстор"</div>
+        <div class="product-desc">За гордите майстори на български занаяти.</div>
+        <div class="product-price">27 лв.</div>
+        <button class="product-btn">Купи</button>
+      </div>
+      <div class="product-card">
+        <img src="images/merch4.webp" class="product-img" alt="Торба за чираци">
+        <div class="product-title">Торба "Чирак на Смелите"</div>
+        <div class="product-desc">Практична платнена торба за всеки ценител на традициите.</div>
+        <div class="product-price">16 лв.</div>
+        <button class="product-btn">Купи</button>
+      </div>
+      <!-- Добави още продукти тук -->
+    </div>
+  </section>
+  <script>
+// Ще държим количката в localStorage (dummy реализация)
+function getCart() {
+  return JSON.parse(localStorage.getItem('smelite_cart') || '[]');
+}
+function setCart(arr) {
+  localStorage.setItem('smelite_cart', JSON.stringify(arr));
+  document.getElementById('cart-count').textContent = arr.length;
+}
+
+// При зареждане: визуализирай броя продукти
+document.addEventListener('DOMContentLoaded', function() {
+  setCart(getCart());
+});
+
+// Клик на всички бутони "Купи":
+document.querySelectorAll('.product-btn').forEach(btn => {
+  btn.onclick = function() {
+    const card = btn.closest('.product-card');
+    // Взимаме dummy информацията
+    const product = {
+      title: card.querySelector('.product-title').textContent,
+      price: card.querySelector('.product-price').textContent,
+      img: card.querySelector('.product-img').getAttribute('src')
+    };
+    const cart = getCart();
+    cart.push(product);
+    setCart(cart);
+    // Optionally, може да покажеш popup „Добавено в количката!“
+    alert('Добавено в количката!');
+  };
+});
+</script>
+
+</body>
+</html>

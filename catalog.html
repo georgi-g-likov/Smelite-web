@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>Каталог с майстори и занаяти | Смелите</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section class="crafts-catalog-section">
+    <h1 class="crafts-catalog-title">Открий майстор и занаят</h1>
+    <form class="crafts-filters">
+      <input type="text" class="crafts-filter-input" placeholder="Търси по име…">
+      <select class="crafts-filter-select">
+        <option value="">Всички занаяти</option>
+        <option>Дърворезба</option>
+        <option>Керамика</option>
+        <option>Тъкачество</option>
+        <option>Грънчарство</option>
+        <option>Ръчно книговезване</option>
+        <!-- още занаяти -->
+      </select>
+      <select class="crafts-filter-select">
+        <option value="">Всички градове</option>
+        <option>София</option>
+        <option>Пловдив</option>
+        <option>Варна</option>
+        <option>Велико Търново</option>
+        <option>Бургас</option>
+        <!-- още градове -->
+      </select>
+      <!-- Бутон за ресет -->
+      <button type="reset" class="crafts-profile-btn" style="background:#f0e0c6;color:#a4772a;margin-left:8px;">Изчисти</button>
+    </form>
+    <div class="crafts-list">
+      <div class="craft-card">
+        <img src="images/avatar-master1.png" alt="" class="craft-avatar">
+        <div class="craft-name">Георги Колев</div>
+        <div class="craft-type">Дърворезба</div>
+        <div class="craft-location">Велико Търново</div>
+        <div class="craft-rating">⭐ 4.9 (27)</div>
+        <button class="craft-profile-btn">Виж профил</button>
+      </div>
+      <div class="craft-card">
+        <img src="images/avatar-master2.png" alt="" class="craft-avatar">
+        <div class="craft-name">Мария Иванова</div>
+        <div class="craft-type">Керамика</div>
+        <div class="craft-location">Пловдив</div>
+        <div class="craft-rating">⭐ 4.7 (14)</div>
+        <button class="craft-profile-btn">Виж профил</button>
+      </div>
+      <div class="craft-card">
+        <img src="images/avatar-master3.png" alt="" class="craft-avatar">
+        <div class="craft-name">Васил Петров</div>
+        <div class="craft-type">Грънчарство</div>
+        <div class="craft-location">София</div>
+        <div class="craft-rating">⭐ 5.0 (42)</div>
+        <button class="craft-profile-btn">Виж профил</button>
+      </div>
+      <div class="craft-card">
+        <img src="images/avatar-master4.png" alt="" class="craft-avatar">
+        <div class="craft-name">Стоян Стоянов</div>
+        <div class="craft-type">Тъкачество</div>
+        <div class="craft-location">Бургас</div>
+        <div class="craft-rating">⭐ 4.6 (9)</div>
+        <button class="craft-profile-btn">Виж профил</button>
+      </div>
+      <!-- Можеш да добавяш още dummy майстори -->
+    </div>
+  </section>
+</body>
+</html>

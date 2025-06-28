@@ -8,6 +8,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   color: #222;
   overflow-x: hidden;
+   padding-top: 76px;
 }
 
 
@@ -15,18 +16,54 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.2rem 2rem;
+  padding: 1.2rem 2.5rem 1.2rem 2rem; /* по-голямо вдясно */
   background: white;
   font-family: 'Montserrat', sans-serif;
-  position: relative;
-  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;   /* 100vw вместо 100% ако има странности */
+  z-index: 9990;
+  box-sizing: border-box;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.06);
 }
 
-
-.main-header .logo {
+header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  background: #fff; /* или твой цвят */
+  padding: 0 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: relative;
+  z-index: 20;
+}
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 60px;
+}
+.logo-svg {
+  height: 56px;   /* регулирай размера */
+  width: auto;
+  display: block;
+}
+.logo-initials-svg {
+  height: 100px;
+  width: auto;
+  margin-right: 12px;
+  display: block;
+}
+.logo-svg {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+/* .main-header .logo {
   font-weight: bold;
   font-size: 1.4rem;
-}
+} */
 
 .main-nav ul {
   display: flex;
@@ -864,15 +901,28 @@ body {
 }
 
 
-
-
-.smelite-logo {
+.contact-svj {
   position: absolute;
-  top: 280px;  /* Регулирай по желание! */
-  left: 25vw;  /* Регулирай по желание! */
-  display: flex;
-  align-items: center;
-  z-index: 11;  /* По-високо от листата! */
+  top: 120px;    /* регулирай според декора */
+  left: 15vw;    /* регулирай според декора */
+  z-index: 13;
+}
+.contact-svj-svg {
+  height: 420px;   /* регулирай размер */
+  width: auto;
+  display: block;
+}
+
+.contact-logo {
+  position: absolute;
+  top: 226px;   /* регулирай по вкус */
+  left: 45vw;   /* регулирай по вкус */
+  z-index: 12;
+}
+.contact-logo-svg {
+  height: 150px;  /* или по твоя вкус */
+  width: auto;
+  display: block;
 }
 
 .smelite-text {
@@ -964,7 +1014,7 @@ body {
   font-size: 1.07rem;
   border-top: 1px solid #ece6dd;
   position: relative;
-  z-index: 2;
+  z-index: 0;
 }
 
 .footer-content {
@@ -1077,3 +1127,647 @@ body {
 .login-btn:hover {
   background-color: #256d27;
 }
+
+/* checkoutStyle */
+body { background: #f7f4ed; font-family: 'Montserrat', sans-serif; margin:0;}
+    .checkout-section {
+      max-width: 520px; margin: 60px auto; background: #fff;
+      border-radius: 28px; box-shadow: 0 6px 32px rgba(110,70,40,0.09);
+      padding: 44px 32px 34px 32px; position: relative;
+    }
+    .checkout-title {
+      font-family: 'Caveat', cursive; color: #70441f;
+      font-size: 2.15rem; margin-bottom: 18px; text-align: center;
+    }
+    .cart-list {
+      list-style: none; padding: 0; margin-bottom: 18px;
+    }
+    .cart-list li {
+      display: flex; align-items: center; gap: 16px;
+      background: #faf4eb; border-radius: 13px; margin-bottom: 8px; padding: 7px 11px;
+    }
+    .cart-img { width: 56px; height: 56px; object-fit: contain; border-radius: 8px;}
+    .cart-title { flex: 1; font-size: 1.07rem; color: #70441f;}
+    .cart-price { color: #e67819; font-weight: 600;}
+    .remove-btn {
+      background: none; border: none; color: #b05a17; font-size: 1.2rem;
+      cursor: pointer; padding: 0 4px;
+    }
+    .cart-total-row { text-align: right; font-size: 1.14rem; color: #b05a17; margin-bottom: 18px;}
+    .checkout-form label {
+      font-size: 1.08rem; color: #705c33; margin-bottom: 5px; display: block;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .checkout-form input,
+    .checkout-form textarea {
+      width: 100%; font-size: 1.07rem; padding: 11px 16px;
+      margin-bottom: 13px; border-radius: 14px; border: 1.3px solid #e8dac2;
+      background: #faf6f2; font-family: 'Montserrat', sans-serif; resize: vertical;
+      transition: border .18s;
+    }
+    .checkout-form input:focus,
+    .checkout-form textarea:focus {
+      border: 1.3px solid #59b042; outline: none;
+    }
+    .checkout-btn {
+      display: block; width: 100%; padding: 14px 0;
+      background: #e67819; color: #fff; border: none; border-radius: 22px;
+      font-family: 'Caveat', cursive; font-size: 1.19rem; letter-spacing: 1px;
+      cursor: pointer; transition: background 0.2s; margin-top: 8px;
+    }
+    .checkout-btn:hover { background: #b05a17; }
+    .checkout-success {
+      text-align: center; color: #4a8429; background: #e3f6da;
+      border-radius: 14px; margin-top: 24px; padding: 15px 0;
+      font-size: 1.15rem; display: none;
+    }
+
+    /* Apprentice_profileStyle */
+     body { background: #f7f4ed; font-family: 'Montserrat', sans-serif; margin:0; }
+    .profile-section {
+      max-width: 760px; margin: 56px auto; background: #fff;
+      border-radius: 28px; box-shadow: 0 6px 32px rgba(110,70,40,0.09);
+      padding: 44px 34px 34px 34px; position: relative;
+    }
+    .profile-header {
+      display: flex; align-items: center; gap: 34px; margin-bottom: 34px;
+    }
+    .profile-avatar {
+      width: 88px; height: 88px; border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(90,60,30,0.11); object-fit: cover;
+    }
+    .profile-info h2 {
+      font-size: 2rem; font-family: 'Caveat', cursive;
+      margin-bottom: 8px; color: #70441f;
+    }
+    .profile-role { font-size: 1.07rem; color: #59b042; }
+    .profile-username {
+      font-size: 1.03rem; color: #ce8630;
+      font-family: 'Montserrat', sans-serif; margin-top: 3px; display: block;
+    }
+    .profile-edit-btn {
+      margin-left: auto; padding: 11px 28px; border: none;
+      background: #e67819; color: #fff; border-radius: 22px;
+      font-family: 'Caveat', cursive; font-size: 1.19rem;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .profile-edit-btn:hover { background: #b05a17; }
+
+    .profile-details {
+      font-size: 1.09rem; font-family: 'Montserrat', sans-serif;
+    }
+    .profile-row {
+      margin-bottom: 16px; display: flex; gap: 16px; align-items: flex-start;
+    }
+    .profile-row > span {
+      width: 110px; color: #b29165; font-weight: 600;
+    }
+    .profile-desc {
+      background: #faf4eb; border-radius: 16px;
+      padding: 16px; color: #58472a; margin-top: 2px;
+    }
+
+    .profile-stats {
+      display: flex; gap: 36px; justify-content: flex-start; margin: 34px 0 18px 0;
+    }
+    .profile-stat {
+      background: #e3f6da; border-radius: 18px; padding: 18px 28px;
+      box-shadow: 0 2px 10px rgba(170,120,70,0.07); text-align: center;
+    }
+    .stat-count {
+      font-size: 2.3rem; color: #4a8429;
+      font-family: 'Caveat', cursive; font-weight: bold;
+    }
+    .stat-label {
+      color: #6e903e; font-size: 1.1rem; margin-top: 3px; font-family: 'Montserrat', sans-serif;
+    }
+
+    .profile-courses {
+      margin-top: 38px;
+    }
+    .profile-courses h3,
+    .profile-favorites h3,
+    .profile-progress h3 {
+      font-size: 1.34rem; color: #a4772a; margin-bottom: 14px; font-family: 'Montserrat', sans-serif;
+    }
+    .enrolled-list {
+      display: flex; flex-direction: column; gap: 18px;
+    }
+    .enrolled-course {
+      background: #faf4eb; border-radius: 18px; box-shadow: 0 2px 10px rgba(170,120,70,0.07);
+      padding: 14px 22px; display: flex; align-items: center; gap: 18px;
+    }
+    .enrolled-course img {
+      width: 54px; height: 54px; border-radius: 12px; object-fit: cover;
+    }
+    .enrolled-course-info {
+      flex: 1;
+    }
+    .enrolled-course-title {
+      font-weight: 600; margin-bottom: 3px;
+    }
+    .enrolled-course-teacher {
+      color: #ce8630; font-size: 0.99rem;
+    }
+    .enrolled-course-status {
+      background: #e3f6da; color: #4a8429; border-radius: 12px;
+      font-size: 0.97rem; padding: 3px 10px; margin-left: 8px;
+    }
+    .enrolled-course-calendar {
+      font-size: 0.97rem; color: #97856a;
+      display: flex; align-items: center; gap: 5px; margin-top: 3px;
+    }
+
+    .profile-favorites {
+      margin-top: 32px;
+    }
+    .favorites-list {
+      display: flex; gap: 18px; flex-wrap: wrap;
+    }
+    .favorite-card {
+      background: #faf4eb; border-radius: 18px;
+      width: 110px; padding: 10px 10px 7px 10px; text-align: center;
+      box-shadow: 0 2px 10px rgba(170,120,70,0.07);
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .favorite-card img { width: 64px; height: 64px; border-radius: 10px; margin-bottom: 4px; object-fit: cover; }
+    .favorite-card span { font-size: 1.01rem; color: #70441f; }
+
+    .profile-progress {
+      margin-top: 32px;
+    }
+    .progress-bar-container {
+      background: #eee5d8; border-radius: 14px; width: 100%; height: 19px; margin-bottom: 9px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      background: #59b042; height: 100%; border-radius: 14px;
+      width: 65%; /* dummy value */
+      transition: width .6s;
+    }
+    .progress-label {
+      color: #765a30; font-size: 1.04rem;
+    }
+
+    .profile-actions {
+      margin-top: 20px; display: flex; gap: 22px;
+    }
+    .profile-password-btn,
+    .profile-logout-btn {
+      flex: 1; padding: 10px 0; border-radius: 17px; border: none;
+      font-family: 'Caveat', cursive; font-size: 1.14rem;
+      background: #f0e0c6; color: #a4772a;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .profile-password-btn:hover { background: #ece3d3; }
+    .profile-logout-btn {
+      background: #e67819; color: #fff;
+    }
+    .profile-logout-btn:hover { background: #b05a17; }
+
+    @media (max-width: 600px) {
+      .profile-section { padding: 20px 7px 20px 7px; }
+      .profile-header { flex-direction: column; gap: 18px;}
+      .profile-stats { gap: 11px; }
+      .profile-stat { padding: 11px 10px;}
+      .favorites-list { gap: 9px; }
+    }
+
+    /* Booking Style */
+     body { background: #f7f4ed; font-family: 'Montserrat', sans-serif; margin:0; }
+    .booking-section {
+      max-width: 520px; margin: 60px auto; background: #fff;
+      border-radius: 28px; box-shadow: 0 6px 32px rgba(110,70,40,0.09);
+      padding: 44px 32px 34px 32px; position: relative;
+    }
+    .booking-title {
+      font-family: 'Caveat', cursive; color: #70441f;
+      font-size: 2.15rem; margin-bottom: 18px; text-align: center;
+    }
+    .booking-form label {
+      font-size: 1.1rem; color: #705c33; margin-bottom: 5px; display: block;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+      width: 100%; font-size: 1.08rem; padding: 12px 16px;
+      margin-bottom: 17px; border-radius: 14px; border: 1.3px solid #e8dac2;
+      background: #faf6f2; font-family: 'Montserrat', sans-serif; resize: vertical;
+      transition: border .18s;
+    }
+    .booking-form input:focus,
+    .booking-form select:focus,
+    .booking-form textarea:focus {
+      border: 1.3px solid #59b042; outline: none;
+    }
+    .booking-form .booking-type-group {
+      display: flex; gap: 16px; margin-bottom: 15px;
+    }
+    .booking-form .booking-type-group label {
+      margin-bottom: 0; font-size: 1.01rem;
+      cursor: pointer; padding: 0 8px 0 0;
+    }
+    .booking-btn {
+      display: block; width: 100%;
+      padding: 15px 0; background: #e67819; color: #fff;
+      border: none; border-radius: 22px;
+      font-family: 'Caveat', cursive; font-size: 1.22rem; letter-spacing: 1px;
+      cursor: pointer; transition: background 0.2s;
+      margin-top: 12px;
+    }
+    .booking-btn:hover { background: #b05a17; }
+    .booking-price {
+      text-align: right; color: #b05a17; font-size: 1.18rem; font-weight: 600;
+      margin-bottom: 17px;
+    }
+    .booking-success {
+      text-align: center; color: #4a8429; background: #e3f6da;
+      border-radius: 14px; margin-top: 24px; padding: 15px 0;
+      font-size: 1.15rem; display: none;
+    }
+    @media (max-width: 650px) {
+      .booking-section { padding: 18px 7px 14px 7px; }
+    }
+
+    /* Catalog style */
+
+    body { background: #f7f4ed; font-family: 'Montserrat', sans-serif; margin:0; }
+    .crafts-catalog-section {
+      max-width: 1120px; margin: 54px auto 44px auto; background: #fff;
+      border-radius: 28px; box-shadow: 0 6px 32px rgba(110,70,40,0.09);
+      padding: 36px 32px 32px 32px; position: relative;
+    }
+    .crafts-catalog-title {
+      font-family: 'Caveat', cursive; color: #70441f; font-size: 2.5rem;
+      margin-bottom: 18px; text-align: center;
+    }
+    .crafts-filters {
+      display: flex; gap: 18px; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .crafts-filter-input, .crafts-filter-select {
+      font-size: 1.08rem; padding: 8px 14px; border-radius: 11px; border: 1.3px solid #e8dac2;
+      background: #faf6f2; font-family: 'Montserrat', sans-serif; min-width: 130px;
+    }
+    .crafts-list {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 26px;
+    }
+    .craft-card {
+      background: #faf4eb; border-radius: 22px; box-shadow: 0 2px 10px rgba(170,120,70,0.08);
+      padding: 22px 18px 16px 18px; display: flex; flex-direction: column;
+      align-items: center; position: relative; transition: box-shadow .19s;
+    }
+    .craft-card:hover { box-shadow: 0 8px 32px rgba(180,120,60,0.13); }
+    .craft-avatar {
+      width: 74px; height: 74px; border-radius: 50%; object-fit: cover; margin-bottom: 13px;
+      border: 3.5px solid #f6e1ca;
+      box-shadow: 0 2px 8px rgba(120,80,20,0.08);
+    }
+    .craft-name {
+      font-size: 1.18rem; font-weight: 700; color: #70441f; margin-bottom: 4px; text-align: center;
+    }
+    .craft-type {
+      font-size: 1.03rem; color: #e67819; font-family: 'Caveat', cursive;
+      margin-bottom: 4px; text-align: center;
+    }
+    .craft-location {
+      font-size: 0.98rem; color: #857454; margin-bottom: 5px; text-align: center;
+    }
+    .craft-rating {
+      font-size: 1.07rem; color: #4a8429; margin-bottom: 11px; text-align: center;
+      display: flex; align-items: center; gap: 4px; justify-content: center;
+    }
+    .craft-profile-btn {
+      margin-top: 8px; background: #e67819; color: #fff; border: none; border-radius: 18px;
+      padding: 10px 20px; font-size: 1.03rem; font-family: 'Caveat', cursive;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .craft-profile-btn:hover { background: #b05a17; }
+    @media (max-width: 800px) {
+      .crafts-catalog-section { padding: 12px 4vw; }
+      .crafts-list { grid-template-columns: 1fr 1fr; gap: 13px;}
+    }
+    @media (max-width: 500px) {
+      .crafts-list { grid-template-columns: 1fr; }
+    }
+
+    /* Master_PROFILE_STYLE */
+    body { background: #f7f4ed; font-family: 'Montserrat', sans-serif; margin:0; }
+    .profile-section {
+      max-width: 920px; margin: 56px auto; background: #fff;
+      border-radius: 28px; box-shadow: 0 6px 32px rgba(110,70,40,0.09);
+      padding: 42px 36px 38px 36px; position: relative;
+    }
+    .profile-header {
+      display: flex; align-items: center; gap: 30px; margin-bottom: 28px;
+    }
+    .profile-avatar {
+      width: 104px; height: 104px; border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(90,60,30,0.11); object-fit: cover;
+    }
+    .profile-info h2 {
+      font-size: 2.3rem; font-family: 'Caveat', cursive; margin-bottom: 8px; color: #70441f;
+    }
+    .profile-role { font-size: 1.1rem; color: #9e814c; }
+    .profile-bio { color: #58472a; margin: 18px 0 4px 0; font-size: 1.12rem; }
+    .profile-stats {
+      display: flex; gap: 34px; margin: 14px 0 0 0;
+    }
+    .profile-stat {
+      background: #faf3e6; border-radius: 18px; padding: 15px 26px;
+      box-shadow: 0 2px 10px rgba(170,120,70,0.07); text-align: center;
+      min-width: 90px;
+    }
+    .stat-count { font-size: 2.2rem; color: #70441f; font-family: 'Caveat', cursive; font-weight: bold; }
+    .stat-label { color: #aa8e63; font-size: 1.07rem; margin-top: 1px; }
+    .profile-edit-btn {
+      margin-left: auto; padding: 10px 26px; border: none; background: #e67819;
+      color: #fff; border-radius: 22px; font-family: 'Caveat', cursive;
+      font-size: 1.14rem; cursor: pointer; transition: background 0.2s;
+    }
+    .profile-edit-btn:hover { background: #b05a17; }
+    .profile-courses, .profile-apprentices, .profile-reviews, .profile-portfolio {
+      margin-top: 40px;
+    }
+    .profile-courses h3, .profile-apprentices h3, .profile-reviews h3, .profile-portfolio h3 {
+      font-size: 1.34rem; color: #a4772a; margin-bottom: 14px; font-family: 'Montserrat', sans-serif;
+    }
+    .courses-list {
+      display: flex; flex-wrap: wrap; gap: 22px;
+    }
+    .course-card {
+      background: #faf4eb; border-radius: 18px; box-shadow: 0 2px 10px rgba(170,120,70,0.07);
+      width: 216px; padding: 15px; display: flex; flex-direction: column; align-items: center;
+    }
+    .course-card img { width: 100%; border-radius: 11px; margin-bottom: 10px; }
+    .course-title { font-weight: 600; margin-bottom: 5px; }
+    .course-actions { margin-top: 8px; display: flex; gap: 7px; }
+    .course-edit-btn, .course-delete-btn {
+      border: none; border-radius: 12px; padding: 5px 12px; font-size: 0.99rem;
+      font-family: 'Caveat', cursive; cursor: pointer; transition: background 0.2s;
+    }
+    .course-edit-btn { background: #e67819; color: #fff; }
+    .course-edit-btn:hover { background: #b05a17; }
+    .course-delete-btn { background: #eee3d4; color: #a14b1b; }
+    .course-delete-btn:hover { background: #e3bf94; }
+    .add-course-btn {
+      margin: 20px 0 0 0; background: #70441f; color: #fff; border: none;
+      border-radius: 18px; padding: 11px 22px; font-size: 1.16rem; font-family: 'Caveat', cursive;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .add-course-btn:hover { background: #b05a17; }
+    .apprentices-list { margin-top: 10px; }
+    .apprentice-row {
+      display: flex; align-items: center; gap: 22px; padding: 9px 0;
+      border-bottom: 1px solid #f1e3d2; font-size: 1.07rem;
+    }
+    .apprentice-avatar { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
+    .apprentice-name { min-width: 120px; }
+    .apprentice-progress {
+      background: #e1edcf; border-radius: 11px; padding: 2px 10px; font-size: 0.99rem; color: #467613;
+    }
+    .profile-reviews ul { list-style: none; padding: 0; margin: 0; }
+    .profile-reviews li {
+      background: #faf4eb; margin-bottom: 11px; border-radius: 12px; padding: 11px 15px;
+      font-size: 1.08rem; color: #82602b; border-left: 5px solid #e67819;
+    }
+    .profile-portfolio .portfolio-list { display: flex; gap: 18px; flex-wrap: wrap; }
+    .profile-portfolio img { width: 116px; border-radius: 12px; }
+    .profile-actions {
+      margin-top: 32px; display: flex; gap: 20px;
+    }
+    .profile-logout-btn {
+      flex: 1; padding: 10px 0; border-radius: 17px; border: none; font-family: 'Caveat', cursive;
+      font-size: 1.14rem; background: #e67819; color: #fff; cursor: pointer; transition: background 0.2s;
+    }
+    .profile-logout-btn:hover { background: #b05a17; }
+    @media (max-width: 700px) {
+      .profile-section { padding: 12px 3vw; }
+      .profile-header { flex-direction: column; gap: 12px;}
+      .courses-list { flex-direction: column; }
+    }
+
+    /* Master_PUBLIC_DETAILS */
+     body { background: #f7f4ed; font-family: 'Montserrat', sans-serif; margin:0; }
+    .master-profile-section {
+      max-width: 900px; margin: 54px auto; background: #fff;
+      border-radius: 28px; box-shadow: 0 6px 32px rgba(110,70,40,0.09);
+      padding: 40px 38px 34px 38px; position: relative;
+    }
+    .master-header {
+      display: flex; align-items: center; gap: 36px; margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+    .master-avatar {
+      width: 110px; height: 110px; border-radius: 50%; object-fit: cover;
+      border: 4px solid #f6e1ca; box-shadow: 0 2px 10px rgba(120,80,20,0.08);
+    }
+    .master-main-info {
+      flex: 1;
+    }
+    .master-name {
+      font-size: 2.3rem; font-family: 'Caveat', cursive;
+      color: #70441f; margin-bottom: 7px;
+    }
+    .master-type {
+      font-size: 1.07rem; color: #e67819; font-family: 'Caveat', cursive; margin-bottom: 2px;
+    }
+    .master-location, .master-exp {
+      color: #a4772a; font-size: 1.05rem; margin-bottom: 3px;
+    }
+    .master-rating {
+      color: #4a8429; font-size: 1.13rem; margin-bottom: 7px;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .master-desc {
+      color: #66542b; font-size: 1.12rem; margin: 18px 0 10px 0;
+      background: #faf4eb; border-radius: 16px; padding: 18px 18px 12px 18px;
+    }
+    .master-profile-stats {
+      display: flex; gap: 27px; margin-top: 9px; margin-bottom: 8px;
+    }
+    .profile-stat {
+      background: #faf3e6; border-radius: 15px; padding: 11px 17px;
+      font-size: 1.01rem; text-align: center; min-width: 70px;
+    }
+    .stat-count {
+      font-size: 1.35rem; color: #70441f; font-family: 'Caveat', cursive; font-weight: bold;
+    }
+    .stat-label {
+      color: #aa8e63; font-size: 0.99rem;
+    }
+    .master-contact-btn {
+      background: #e67819; color: #fff; border: none; border-radius: 16px;
+      padding: 10px 20px; font-size: 1.09rem; font-family: 'Caveat', cursive;
+      cursor: pointer; margin-top: 9px; transition: background 0.18s;
+    }
+    .master-contact-btn:hover { background: #b05a17; }
+
+    .master-gallery {
+      margin: 30px 0 15px 0;
+    }
+    .gallery-list {
+      display: flex; gap: 15px; flex-wrap: wrap;
+    }
+    .gallery-list img {
+      width: 112px; border-radius: 13px; box-shadow: 0 1px 5px #ecd6b250;
+      object-fit: cover;
+    }
+
+    .master-booking-section {
+      margin-top: 34px; background: #faf4eb; border-radius: 16px; padding: 18px 20px;
+      display: flex; flex-wrap: wrap; gap: 44px; align-items: center; justify-content: space-between;
+    }
+    .master-booking-info {
+      flex: 1;
+    }
+    .master-pricing {
+      font-size: 1.12rem; color: #b05a17; margin-bottom: 6px;
+    }
+    .master-calendar-label {
+      color: #aa8e63; font-size: 1rem; margin-bottom: 4px;
+    }
+    .master-calendar {
+      background: #fff; border: 1.2px solid #e8dac2; border-radius: 11px;
+      padding: 7px 13px; font-size: 1rem; font-family: 'Montserrat', sans-serif;
+    }
+    .master-book-btn {
+      background: #70441f; color: #fff; border: none; border-radius: 16px;
+      padding: 14px 26px; font-size: 1.13rem; font-family: 'Caveat', cursive;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .master-book-btn:hover { background: #e67819; }
+
+    .master-reviews {
+      margin-top: 38px;
+    }
+    .master-reviews h3 { font-size: 1.22rem; color: #a4772a; margin-bottom: 12px; font-family: 'Montserrat', sans-serif;}
+    .reviews-list { list-style: none; padding: 0; }
+    .reviews-list li {
+      background: #faf4eb; margin-bottom: 9px; border-radius: 10px; padding: 10px 15px;
+      font-size: 1.08rem; color: #82602b; border-left: 5px solid #e67819;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .review-author {
+      font-weight: 600; color: #4a8429; margin-right: 9px;
+    }
+    @media (max-width: 700px) {
+      .master-profile-section { padding: 11px 2vw;}
+      .master-header { flex-direction: column; gap: 12px;}
+      .master-booking-section { flex-direction: column; gap: 16px;}
+      .gallery-list img { width: 86px;}
+    }
+
+    /* SHOP_PAGE_STYLE */
+    body { background: #f7f4ed; font-family: 'Montserrat', sans-serif; margin:0; }
+    .shop-section {
+      max-width: 1080px; margin: 54px auto 44px auto; background: #fff;
+      border-radius: 28px; box-shadow: 0 6px 32px rgba(110,70,40,0.09);
+      padding: 36px 32px 32px 32px; position: relative;
+    }
+    .shop-title {
+      font-family: 'Caveat', cursive; color: #70441f; font-size: 2.4rem;
+      margin-bottom: 22px; text-align: center;
+    }
+    .shop-products {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      gap: 28px;
+    }
+    .product-card {
+      background: #faf4eb; border-radius: 19px; box-shadow: 0 2px 10px rgba(180,120,60,0.08);
+      padding: 18px 15px 14px 15px; display: flex; flex-direction: column;
+      align-items: center; transition: box-shadow .18s;
+    }
+    .product-card:hover { box-shadow: 0 8px 32px rgba(180,120,60,0.15);}
+    .product-img {
+      width: 136px; height: 136px; object-fit: contain; border-radius: 14px; margin-bottom: 9px;
+      background: #fff;
+    }
+    .product-title {
+      font-size: 1.17rem; font-weight: 700; color: #70441f; text-align: center; margin-bottom: 7px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .product-desc {
+      color: #8b7554; font-size: 0.98rem; margin-bottom: 9px; text-align: center;
+    }
+    .product-price {
+      color: #e67819; font-weight: bold; font-size: 1.19rem; margin-bottom: 10px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .product-btn {
+      background: #e67819; color: #fff; border: none; border-radius: 15px;
+      padding: 10px 25px; font-size: 1.08rem; font-family: 'Caveat', cursive;
+      cursor: pointer; transition: background 0.17s;
+    }
+    .product-btn:hover { background: #b05a17; }
+    @media (max-width: 700px) {
+      .shop-section { padding: 12px 2vw;}
+      .shop-products { grid-template-columns: 1fr 1fr; gap: 12px;}
+      .product-img { width: 100px; height: 100px;}
+    }
+    @media (max-width: 480px) {
+      .shop-products { grid-template-columns: 1fr;}
+    }
+
+    /* BLOG_PAGE */
+
+    body { background: #f7f4ed; font-family: 'Montserrat', sans-serif; margin:0; }
+    .blog-section {
+      max-width: 1020px; margin: 54px auto 44px auto; background: #fff;
+      border-radius: 28px; box-shadow: 0 6px 32px rgba(110,70,40,0.09);
+      padding: 36px 32px 32px 32px; position: relative;
+    }
+    .blog-title {
+      font-family: 'Caveat', cursive; color: #70441f; font-size: 2.5rem;
+      margin-bottom: 18px; text-align: center;
+    }
+    .blog-list {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+      gap: 28px;
+    }
+    .blog-card {
+      background: #faf4eb; border-radius: 20px; box-shadow: 0 2px 10px rgba(170,120,70,0.08);
+      padding: 0 0 22px 0; display: flex; flex-direction: column; transition: box-shadow .18s;
+    }
+    .blog-card:hover { box-shadow: 0 8px 32px rgba(180,120,60,0.13);}
+    .blog-img {
+      width: 100%; height: 186px; object-fit: cover; border-radius: 20px 20px 0 0; margin-bottom: 12px;
+      background: #fff;
+    }
+    .blog-meta {
+      font-size: 0.99rem; color: #a08257; margin-bottom: 4px; padding: 0 20px;
+    }
+    .blog-headline {
+      font-size: 1.17rem; font-weight: 700; color: #70441f; margin-bottom: 6px; padding: 0 20px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .blog-snippet {
+      color: #82602b; font-size: 1rem; margin-bottom: 8px; padding: 0 20px;
+      flex: 1 0 auto;
+    }
+    .blog-readmore-btn {
+      background: #e67819; color: #fff; border: none; border-radius: 13px;
+      padding: 8px 21px; font-size: 1.03rem; font-family: 'Caveat', cursive;
+      cursor: pointer; transition: background 0.16s; margin: 10px 20px 0 20px; align-self: flex-start;
+    }
+    .blog-readmore-btn:hover { background: #b05a17; }
+    /* Модал */
+    .modal-bg {
+      display:none; position:fixed; top:0; left:0; width:100vw; height:100vh;
+      background:rgba(70,42,20,0.21); align-items:center; justify-content:center; z-index:1000;
+    }
+    .modal-content {
+      background: #fff; border-radius: 22px; max-width: 680px; width:90vw; box-shadow: 0 4px 28px #00000020;
+      padding: 32px 28px 22px 28px; position:relative;
+    }
+    .modal-close {
+      position:absolute;top:18px;right:20px;font-size:2rem;color:#e67819;background:none;border:none;cursor:pointer;
+    }
+    .modal-title { font-size:2rem; font-family:'Caveat',cursive;color:#70441f; margin-bottom:7px;}
+    .modal-meta { color:#a08257;font-size:1rem;margin-bottom:16px;}
+    .modal-img { width:100%; max-width:340px; border-radius:14px; margin-bottom:18px;}
+    .modal-body { color: #82602b; font-size: 1.09rem; line-height: 1.65; }
+    @media (max-width:800px) { .blog-section {padding:12px 4vw;} .blog-list{grid-template-columns:1fr;} .blog-img{height:140px;} }
+    @media (max-width:650px) {.modal-content{padding:11px 7px 6px 7px;} .modal-title{font-size:1.3rem;}}

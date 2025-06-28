@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>Резервация на урок | Смелите</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+  <script>
+
+    // Dummy за демо: При submit скрива формата и показва success
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      document.querySelector('.booking-form').style.display = 'none';
+      document.querySelector('.booking-success').style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+  <section class="booking-section">
+    <h1 class="booking-title">Резервирай урок</h1>
+    <form class="booking-form" onsubmit="handleBookingSubmit(event)">
+      <label for="lesson-type">Тип обучение:</label>
+      <div class="booking-type-group">
+        <label><input type="radio" name="lesson-type" value="group" checked> Групово</label>
+        <label><input type="radio" name="lesson-type" value="individual"> Индивидуално</label>
+      </div>
+
+      <label for="date">Дата:</label>
+      <select id="date" required>
+        <option value="">Избери дата</option>
+        <option>21.07.2025</option>
+        <option>28.07.2025</option>
+        <option>03.08.2025</option>
+      </select>
+
+      <label for="count">Брой участници:</label>
+      <input type="number" id="count" min="1" max="8" value="1" required>
+
+      <label for="name">Име и фамилия:</label>
+      <input type="text" id="name" required placeholder="Вашето име">
+
+      <label for="email">Имейл:</label>
+      <input type="email" id="email" required placeholder="user@email.com">
+
+      <label for="phone">Телефон:</label>
+      <input type="tel" id="phone" required placeholder="+359 88 123 4567">
+
+      <label for="notes">Коментар (по избор):</label>
+      <textarea id="notes" rows="2" placeholder="Специални изисквания, бележки…"></textarea>
+
+      <div class="booking-price">Цена: 50-80 лв.</div>
+
+      <button class="booking-btn" type="submit">Резервирай</button>
+    </form>
+    <div class="booking-success">Вашата резервация е приета! Ще се свържем с Вас за потвърждение.</div>
+  </section>
+</body>
+</html>
