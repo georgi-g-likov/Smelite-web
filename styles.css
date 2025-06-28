@@ -108,14 +108,14 @@ body {
 .decor-white-large {
   right: 360px;
   top: 0;
-  width: 420px; height: 270px;
+  width: 450px; height: 300px;
   z-index: 1;
  
 }
 /* Черно (долу ляво под лявата снимка) */
 .decor-black {
   left: -30px;
-  bottom: 205px;
+  bottom: 240px;
   width: 250px; height: 140px;
   transform: rotate(-19deg);
   z-index: 3;
@@ -132,18 +132,7 @@ body {
 }
 
 
-@keyframes decorPopIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.85);
-    filter: blur(6px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-  }
-}
+
 
 
 .hero-content {
@@ -347,20 +336,20 @@ width: 520px;
 
 .decor-leaf.yellow {
   position: absolute;
-  left: 0px;           /* По-наляво, да е ПОД кафявото */
-  top: 6px;           /* Регулирай за перфектно подравняване */
-  width: 320px;
-  height: 160px;
-  transform: rotate(-45deg);
+  left: -96px;           /* По-наляво, да е ПОД кафявото */
+  top: 26px;           /* Регулирай за перфектно подравняване */
+  width: 540px;
+  height: 290px;
+  transform: rotate(-10deg);
   z-index: 1;           /* Под кафявото */
 }
 
 .decor-leaf.brown {
   position: absolute;
-  left: 12px;           /* Почти до ръба на жълтото */
-  top: -250px;            /* Над жълтото */
-  width: 220px;
-  height: 420px;
+  left: -32px;           /* Почти до ръба на жълтото */
+  top: -268px;            /* Над жълтото */
+  width: 780px;
+  height: 480px;
   transform: rotate(-10deg);
   z-index: 2;           /* Над жълтото */
 }
@@ -480,36 +469,7 @@ width: 520px;
 }
 .carousel-arrow.left  { left: -55px; }
 .carousel-arrow.right { right: -55px; }
-.carousel-arrow:hover { background: #eee; opacity: 1; }
-
-
-/* @media (max-width: 900px) {
-  .crafts-oval-list {
-    flex-direction: column;
-    align-items: center;
-    gap: 36px;
-  }
-}
-
-/* За по-малки екрани (responsive) */
-/* @media (max-width: 700px) {
-  .crafts-title {
-    font-size: 1.5em;
-    margin: 34px 0 18px 0;
-  }
-  .crafts-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-    padding: 0 8px;
-  }
-  .craft-card {
-    min-height: 220px;
-    padding: 13px 7px 19px 7px;
-  }
-  .craft-card img {
-    height: 120px;
-  }
-}  */
+.carousel-arrow:hover { background: #eee; opacity: 1; } 
 
 /* МАЙСТОРИ */
 body {
@@ -755,83 +715,22 @@ body {
 
   /* чершията */
 .shop {
- background: linear-gradient(120deg, #7c4b27 0%, #b98557 100%);
+ background: linear-gradient(120deg, #2c1606 0%, #b98557 100%);
   position: relative;
-  min-height: 950px;
+  min-height: 1100px;
   overflow: hidden;
   padding: 120px 0 80px 0;
 }
 
 .shop h1 {
    position: absolute;
-  right: 10vw;
-  top: 40px;
+  right: 3vw;
+  top: 26px;
   z-index: 3;
   color: #fff;
   font-size: 2.7rem;
   font-family: 'Caveat', cursive;
 }
-
-/* .product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.product-card {
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 16px;
-  padding: 20px;
-  text-align: left;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-  transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.product-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
-
-.product-card h3 {
-  margin: 10px 0 5px;
-  font-size: 1.1em;
-}
-
-.product-card p {
-  font-size: 0.95em;
-  color: #444;
-  margin: 4px 0;
-}
-
-.product-card .btn {
-  display: inline-block;
-  margin-top: 10px;
-  background-color: #222;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-
-.price {
-  font-weight: bold;
-  color: #2e7d32;
-  font-size: 1.1em;
-} */
 
 .shop-section {
   position: relative;
@@ -842,8 +741,8 @@ body {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
-  width: 850px;     /* Примерно! Може да коригираш */
+  /* махаш transform тук! */
+  width: 850px;
   height: 800px;
   border-radius: 50%;
   background-image: url("images/shop-bg.jpg");
@@ -852,9 +751,11 @@ body {
   z-index: 0;
   pointer-events: none;
   box-shadow: 0 6px 32px rgba(0,0,0,0.08);
+  transition: transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1); /* плавно скалиране */
 }
 
-.shop-card {
+
+/* .shop-card {
   position: absolute;
   min-width: 230px;
   min-height: 80px;
@@ -872,8 +773,45 @@ body {
 }
 .shop-card.green  { background: #b6c7a4; }
 .shop-card.brown  { background: #93542d; color: #fff; }
-.shop-card.beige  { background: #e9ddc8; }
+.shop-card.beige  { background: #e9ddc8; } */
 
+.shop-bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  pointer-events: none; /* за да не пречат на кликове по снимката */
+  z-index: 3;
+}
+.shop-bubble {
+  position: absolute;
+  min-width: 320px;
+  min-height: 110px;
+  padding: 38px 74px;
+  border-radius: 70px 0 70px 0;
+  font-size: 2.4rem;     
+  font-family: 'Caveat', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(50px) scale(0.96);
+  transition:
+    opacity 0.6s cubic-bezier(.42,0,.58,1),
+    transform 0.7s cubic-bezier(.52,1.5,.5,1);
+  pointer-events: auto;
+}
+.shop-bubble.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.shop-bubble.red     { background: #a13d2d; color: #fff; }
+.shop-bubble.orange  { background: #b46c33; color: #fff; }
+.shop-bubble.green   { background: #b6c7a4; color: #232323; }
+.shop-bubble.white   { background: #f9f6f2; color: #232323; }
+.shop-bubble.green2  { background: #b6c7a4; color: #232323; }
 
 .shop-content {
   position: relative;
@@ -881,71 +819,206 @@ body {
   padding: 80px 20px;
 }
 
-/* ВЪПРОСИ */
-  .faq {
-    background-color: #f2eee8;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.faq-list {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.faq-item {
-  margin-bottom: 20px;
-}
-
-.faq-item h3 {
-  font-size: 1.2em;
-  margin-bottom: 5px;
-}
 
 /* КОНТАКТИ */
-.contact {
-  background-color: #f2eee8;
-  padding: 60px 20px;
-  text-align: center;
+.contact-section { 
+  position: relative; 
+  min-height: 600px; 
+  background: #fbf6ee;
+  /* НЕ слагай overflow: hidden! */
 }
 
-.contact form {
-  max-width: 600px;
+.leaf {
+  position: absolute;
+  z-index: 3;   /* по-високо от формата! */
+  pointer-events: none;
+}
+
+/* Две в центъра отгоре */
+.leaf-red {
+  top: -80px; left: 85.25%; transform: translateX(-90%); width: 590px;
+}
+.leaf-white {
+  top: -145px; left: 14%; transform: translateX(10%); width: 720px;
+}
+
+/* Горен ляв ъгъл */
+.leaf-green {
+  top: 310px; left: -70px; width: 420px;
+}
+.leaf-white1 {
+  top: 20px; left: -200px; width: 590px;
+}
+
+/* Долу център */
+.leaf-white2 {
+  bottom: -148px; left: 80.25%; transform: translateX(-120%); width: 620px;
+}
+.leaf-orange {
+  bottom: -35px; left: 50%; transform: translateX(30%); width: 300px;
+}
+
+/* Горен десен ъгъл */
+.leaf-black {
+  top: -10px; right: -60px; width: 240px;
+}
+
+
+
+
+.smelite-logo {
+  position: absolute;
+  top: 280px;  /* Регулирай по желание! */
+  left: 25vw;  /* Регулирай по желание! */
+  display: flex;
+  align-items: center;
+  z-index: 11;  /* По-високо от листата! */
+}
+
+.smelite-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 2.9rem;
+  color: #191715;
+  letter-spacing: -2px;
+}
+
+
+
+
+
+/* Контейнерът на формата – няма background! */
+.contact-container {
+  position: relative;
+  max-width: 340px;
+  left: 68vw;   /* изместен надясно */
+  margin-top: 60px;
+  z-index: 5;   /* по-висок от листата, ако има застъпване */
+  border-radius: 42px;
+  padding: 28px 18px 18px 18px;
+  background: none !important;   /* НЯМА background! */
+  box-shadow: none !important;   /* НЯМА сянка! */
+}
+
+.contact-container h2 {
+  font-family: 'Caveat', cursive;
+  font-size: 2.2rem;
+  text-align: left;
+  margin-bottom: 24px;
+  color: #52361f;
+}
+
+.contact-form label {
+  font-size: 1.03rem;
+  margin-bottom: 4px;
+  display: block;
+  color: #52361f;
+  font-family: 'Montserrat', sans-serif;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 11px 15px;
+  margin-bottom: 14px;
+  border: 1.2px solid #dfd7cb;
+  border-radius: 16px;
+  background: #faf6f2;
+  font-size: 1.06rem;
+  font-family: 'Montserrat', sans-serif;
+  resize: vertical;
+  transition: border .18s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1.2px solid #5bb24a;
+  outline: none;
+}
+
+.contact-btn {
+  display: block;
+  width: 100%;
+  padding: 13px 0;
+  background: #e67819;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.22rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 6px;
+}
+.contact-btn:hover {
+  background: #b05a17;
+}
+
+
+
+/* ФУУТЪР */
+.site-footer {
+  background: #faf6f2;  /* почти като body background-а ти */
+  padding: 38px 0 0 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #7a6e63;
+  font-size: 1.07rem;
+  border-top: 1px solid #ece6dd;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-content {
+  max-width: 1060px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  gap: 100px;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-.contact input,
-.contact textarea {
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1em;
+.footer-col h4 {
+  font-size: 0.89rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5a534b;
 }
 
-.contact button {
-  padding: 12px;
-  background-color: #f2eee8;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-/* ФУУТЪР */
-footer img {
-  width: 40px;
-  height: 40px;
+.footer-col ul li {
+  margin-bottom: 5px;
+  font-size: 0.97rem;
 }
-.footer-socials {
-  margin: top 10px;;
-  margin-bottom: 10px; /* или 10px според вкуса ти */
+.footer-col ul li a {
+  color: #7a6e63;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.footer-col ul li a:hover {
+  color: #e67819;
+}
+
+.footer-bottom {
   display: flex;
-  gap: 12px; /* разстояние между иконите */
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.89rem;
+  color: #b8ad9f;
+  margin: 32px 80px 10px 80px;
+  padding-top: 12px;
+  border-top: 1px solid #ece6dd;
 }
+
+.footer-copy {
+  font-size: 0.89rem;
+  color: #b8ad9f;
+}
+
 
 
 

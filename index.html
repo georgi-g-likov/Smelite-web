@@ -12,13 +12,6 @@
 </head>
 <body>
 
-<!-- <div class="bg-decor">
-  <img src="images/decor-red.png" class="decor decor-red" />
-  <img src="images/decor-green.png" class="decor decor-green" />
-  <img src="images/decor-black.png" class="decor decor-black" />
-  <img src="images/decor-white.png" class="decor decor-white" />
-</div> -->
-
 
   <header class="main-header">
   <div class="logo">Smelite.bg</div>
@@ -29,7 +22,7 @@
       <li><a href="#crafts">ЗАНАЯТИ</a></li>
       <li><a href="#masters">МАЙСТОРИ</a></li>
       <li><a href="#shop">НАШАТА ЧАРШИЯ</a></li>
-      <li><a href="#faq">КАК РАБОТИ?</a></li>
+      <li><a href="#how-it-works">КАК РАБОТИ?</a></li>
       <li><a href="#contact">СВЪРЖИ СЕ С НАС</a></li>
     </ul>
   </nav>
@@ -49,19 +42,19 @@
 
       <!-- ЧЕРВЕНО листо -->
   <!-- ЧЕРВЕНО овал вляво (както досега) -->
-  <svg class="decor decor-brown" viewBox="0 0 400 400">
+  <svg class="decor decor-brown" viewBox="0 0 400 400" data-aos="zoom-in" data-aos-delay="700">
     <path d="M 400 200 Q 380 70 199 -1 Q 197 51 198 95 Q 198 169 199 186 Q 196 302 400 348 Z" fill="#ff0000"/>
   </svg>
   <!-- Голяма бяла елипса горе вдясно (зад снимките) -->
-  <svg class="decor decor-white-large" viewBox="0 0 600 400">
+  <svg class="decor decor-white-large" viewBox="0 0 800 460" data-aos="zoom-in" data-aos-delay="900">
     <path d="M 759 259 Q 607 61 439 17 Q 155 -58 -2 -10 Q 32 261 293 318 Q 601 356 782 330 Z" fill="#fff"/>
   </svg>
   <!-- Черно (тъмно) листо долу вляво под лявата снимка -->
-  <svg class="decor decor-black" viewBox="0 0 260 150">
+  <svg class="decor decor-black" viewBox="0 0 260 150" data-aos="zoom-in" data-aos-delay="1100">
     <path d="M 10 120 Q 23 43 116 24 Q 217 19 264 30 Q 261 49 229 90 Q 136 162 10 120 Z" fill="#222"/>
   </svg>
   <!-- Зелено листо под дясната снимка -->
-  <svg class="decor decor-green" viewBox="0 0 330 120">
+  <svg class="decor decor-green" viewBox="0 0 330 120" data-aos="zoom-in" data-aos-delay="1300">
     <path d="M 43 112 Q 80 10 185 -15 Q 236 -33 280 -25 Q 256 66 153 128 Q 77 166 27 158 Z" fill="#008000"/>
   </svg>
   </div>
@@ -99,8 +92,15 @@
     <img src="images/featured-craft.jpg" alt="Керамика">
   </div>
   <div class="crafts-hero-decor">
-   <img src="images/decor-yellow.png" class="decor-leaf yellow" data-aos="fade-right" data-aos-delay="150" alt="decor">
-      <img src="images/decor-brown.png" class="decor-leaf brown" data-aos="fade-right" data-aos-delay="300" alt="decor">
+
+   <svg class="decor-leaf yellow" viewBox="-99.2385 -29.916 247.7 143.7">
+  <path d="M -29 -7 Q -20 -7 -11 -4 Q 59 24 73 106 Q -25 67 -29 -2 Z" fill="#ffA500"/>
+   </svg>
+
+   <svg class="decor-leaf brown" viewBox="-128.409 -87.7711 589.6 342.2">
+  <path d="M 239 29 Q 249 162 -77 130 Q -73 71 0 26 Q 61 -10 238 11 Z" fill="#ff0000"/>
+   </svg>
+
   </div>
 </div>
     <h2 class="crafts-hero-title" data-aos="fade-left" data-aos-delay="350">Занаяти</h2>
@@ -140,6 +140,7 @@
 </div>
 
 </section>
+
 
 
   <!-- 👤 МАЙСТОРИ -->
@@ -197,7 +198,7 @@
 
 
 <!-- Как работи -->
-<section class="how-it-works">
+<section class="how-it-works" id = "how-it-works">
   <h2 class="section-title">КАК РАБОТИ</h2>
   <div class="shapes-row">
   <!-- Лява форма -->
@@ -238,79 +239,99 @@
 </section>
 
 
-  <!-- 🛍️ ЧАРШИЯ -->
- <section class="shop fade-in" id="shop">
-     <div class="shop-bg" data-aos="zoom-in"></div> <!-- Фоновото изображение с ефект -->
+<section class="shop fade-in" id="shop">
+  <div class="shop-bg"></div>
+
+  <!-- Тук вмъкваш bubble контейнера -->
+  <div class="shop-bubbles">
+  <div class="shop-bubble red"     style="top: 200px; right: 7%;">Чаршията</div>
+<div class="shop-bubble orange"  style="top: 400px; left: 5%;">Блог</div>
+<div class="shop-bubble green"   style="top: 630px; right: 10%;">Вход</div>
+<div class="shop-bubble white"   style="top: 870px; left: 13%;">Регистрация</div>
+<div class="shop-bubble green2"  style="top: 1110px; right: 14%;">Нашата общност</div>
+
+  </div>
+
+ 
   <h1>Нашата чаршия</h1>
-  <div class="shop-card green" data-aos="fade-left" data-aos-delay="200" style="top: 80px; left: 75%; ">Чаршията</div>
-  <div class="shop-card brown" data-aos="fade-right" data-aos-delay="350" style="top: 240px; left: 8%;">Блог</div>
-  <div class="shop-card beige" data-aos="fade-up" data-aos-delay="500" style="bottom: 120px; right: 6%;">Вход</div>
-  <h1 data-aos="fade-down" data-aos-delay="700">Нашата чаршия</h1>
-<button class="btn-float" data-aos="fade-right" data-aos-delay="950">Разходи се</button>
+  
 </section>
 
 
 
-<!-- 🙋 ЧЗВ
-<section class="faq fade-in" id="faq">
-  <h1>Често задавани въпроси</h1>
-  <div class="faq-list">
-    <div class="faq-item fade-up">
-      <h3>Как да се запиша за урок при майстор?</h3>
-      <p>Можеш да избереш майстор от секцията с профили и да резервираш урок директно от профила му.</p>
-    </div>
-    <div class="faq-item fade-up">
-      <h3>Мога ли да участвам в групово обучение?</h3>
-      <p>Да! Много от майсторите предлагат и групови уъркшопи, които са отбелязани в описанията.</p>
-    </div>
-    <div class="faq-item fade-up">
-      <h3>Какви са методите на плащане?</h3>
-      <p>Плащането става сигурно през платформата с карта или наложен платеж при продукти от Чаршията.</p>
-    </div>
+
+
+<!-- свържи се с нас -->
+<section class="contact-section" id="contact" style="position:relative">
+
+   <svg class="leaf leaf-red"   viewBox="-61.7232 -21.7485 540.9 314"><path d="M 23 173 Q 7 118 122 32 Q 193 -12 246 -3 Q 261 49 219 88 Q 151 161 35 173 Z" fill="#a92d23"/></svg>
+<svg class="leaf leaf-white"    viewBox="-160.324 -66.2513 524.2 304.1"><path d="M 143 151 Q -36 160 -86 -4 Q -50 2 25 -5 Q 215 11 259 138 Z" fill="#fff"/></svg>
+
+<svg class="leaf leaf-green"    viewBox="-61.7232 -21.7485 540.9 314"><path d="M 23 173 Q 7 118 122 32 Q 193 -12 246 -3 Q 261 49 219 88 Q 151 161 35 173 Z" fill="#2E6F40"/></svg>
+<svg class="leaf leaf-white1"   viewBox="-268.588 -152.427 733 425.6"><path d="M 27 206 Q -68 178 -68 -119 Q 29 -122 68 -82 Q 199 8 199 216 Z Q 107 245 197 218" fill="#fff"/></svg>
+
+<svg class="leaf leaf-white2"   viewBox="-352.65 -162.731 993.6 576.8"><path d="M -166 235 Q -136 86 -13 32 Q 132 -23 330 -40 Q 354 157 199 216 Z Q 104 238 199 217" fill="#fff"/></svg>
+<svg class="leaf leaf-orange"   viewBox="-117.259 -56.2782 509.3 295.5"><path d="M 93 146 Q 33 93 0 24 Q -14 -10 -27 -52 Q 266 -23 293 216 Q 192 229 132 179 Z" fill="#ed8825"/></svg>
+
+<svg class="leaf leaf-black"    viewBox="-117.259 -56.2782 509.3 295.5"><path d="M 93 146 Q 33 93 0 24 Q -14 -10 -27 -52 Q 266 -23 293 216 Q 192 229 132 179 Z" fill="#282726"/></svg>
+
+
+
+ <!-- Логото на СМЕЛИТЕ – СЛЕД листата! -->
+  <div class="smelite-logo">
+    <span class="smelite-text">Смелите</span>
+  </div>
+
+
+  <div class="contact-container">
+    <h2>Свържете се с нас!</h2>
+    <form class="contact-form">
+      <label for="email">Имейл</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Съобщение</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit" class="contact-btn">Изпрати</button>
+    </form>
   </div>
 </section>
 
 
-
-
-📬 Контакт -->
-<!-- <section class="contact fade-in" id="contact">
-  <h1>Свържи се с нас</h1>
-  <form>
-    <input type="text" name="name" placeholder="Име" required>
-    <input type="email" name="email" placeholder="Имейл" required>
-    <textarea name="message" rows="5" placeholder="Съобщение" required></textarea>
-    <button type="submit">Изпрати</button>
-  </form>
-</section> -->
-
+<!-- футър -->
 <footer class="site-footer">
   <div class="footer-content">
-    <div class="footer-logo">
-      <h2>Smelite.bg</h2>
-      <p>Платформа за занаятчии и чираци</p>
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#">Начало</a></li>
+        <li><a href="#">Занаяти</a></li>
+        <li><a href="#">Контакт</a></li>
+      </ul>
     </div>
-    
-    <div class="footer-links">
-        <a href="#home">Начало</a>
-      <a href="#crafts">Занаяти</a>
-      <a href="#masters">Майстори</a>
-      <a href="#shop">Нашата чаршия</a>
-      <a href="#faq">Въпроси</a>
-      <a href="#contact">Контакт</a>
+    <div class="footer-col">
+      <h4>Socials</h4>
+      <ul>
+        <li><a href="#">TikTok</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">YouTube</a></li>
+      </ul>
     </div>
-
-    <div class="footer-socials">
-      <a href="#"><img src="images/facebook-icon.png" alt="Facebook" /></a>
-      <a href="#"><img src="images/instagram-icon.png" alt="Instagram" /></a>
-      <!-- Добави още икони при нужда -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>hello@smelite.bg</li>
+        <li>+359 888 123456</li>
+        <li>ул. Примерна 1, София</li>
+      </ul>
     </div>
   </div>
-
   <div class="footer-bottom">
-    <p>© 2025 Smelite.bg. Всички права запазени.</p>
+    <span>Terms & Conditions · Privacy Policy</span>
+    <span class="footer-copy">&copy; 2025 Smelite.bg</span>
   </div>
 </footer>
+
 
 <script src="scroll-effect.js"></script>
 <script src="tilt.js"></script>
@@ -318,6 +339,9 @@
 <script src="scroll-animate.js"></script>
 <script src="carusel.js"></script>
 <script src="paraclas.js"></script>
+<script src="decorAnimation.js"></script>
+<script src="scrollForShop.js"></script>
+<script src="showBubblesOnScroll.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
