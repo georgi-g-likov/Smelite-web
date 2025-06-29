@@ -1,5 +1,6 @@
 package com.smelite.service;
 
+import com.smelite.dto.AuthRequest;
 import com.smelite.dto.RegisterRequest;
 import com.smelite.dto.AuthResponse;
 import com.smelite.entity.*;
@@ -8,6 +9,7 @@ import com.smelite.security.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -70,6 +72,18 @@ public class AuthService {
         return AuthResponse.builder()
                 .token(jwtToken)
                 .build();
+    }
+
+    public AuthResponse login(AuthRequest request) {
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
+        );
+
+        User user = userRepository.findByEmail(request.getEmail())
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+
+        String jwt = jwtService.generateToken(user);
+        return new AuthResponse(jwt);
     }
 
     public AuthResponse authenticate(com.smelite.dto.AuthRequest request) {

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.util.List;
+
 @Entity
 @DiscriminatorValue("MASTER")
 @Getter
@@ -25,6 +27,8 @@ public class Master extends User {
     private int studentCount;
     private int courseCount;
 
+    @OneToMany(mappedBy = "master", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CraftProfile> crafts;
     @Column(length = 2000)
     private String portfolioImages;   // CSV или JSON списък от изображения
 }

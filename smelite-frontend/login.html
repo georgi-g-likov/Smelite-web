@@ -101,5 +101,36 @@
     </form>
     <a href="register.html" class="link">Нямаш акаунт? Регистрирай се безплатно!</a>
   </div>
+ <script>
+     if (localStorage.getItem("token")) {
+  window.location.href = "index.html"; // или dashboard
+}
+
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.querySelector("input[type='email']").value;
+      const password = document.querySelector("input[type='password']").value;
+
+      const response = await fetch("http://localhost:8080/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, password })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem("token", data.token);
+        alert("Успешен вход!");
+        window.location.href = "index.html"; // или друга целева страница
+      } else {
+        alert("Грешка при вход. Проверете данните.");
+      }
+    });
+ </script>
 </body>
 </html>
