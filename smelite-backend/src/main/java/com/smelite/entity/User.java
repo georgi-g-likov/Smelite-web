@@ -2,14 +2,17 @@ package com.smelite.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "role_type")
 @Entity
 @Table(name = "users")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 public class User {
 
     @Id
@@ -30,8 +33,4 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    public enum Role {
-        MASTER,
-        APPRENTICE
-    }
 }

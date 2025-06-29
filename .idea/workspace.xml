@@ -5,12 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="184617e0-35f3-4070-8092-a7cdccb69c7c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/smelite-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/dto/AuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/dto/AuthResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/dto/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/dto/RegisterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/service/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/controller/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/AuthResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/AuthResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/RegisterRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/RegisterRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/User$Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/User$UserBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/security/JwtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/security/JwtService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/security/UserDetailsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/service/AuthService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-frontend/register.html" afterDir="false" />
+>>>>>>> edd1c3f145e3aa847d396320a8d0e871c61bd8ba
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,6 +57,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
@@ -32,6 +66,17 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.SmeliteApplication.executor": "Run",
+    "Maven.smelite-backend [clean].executor": "Run",
+    "Maven.smelite-backend [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "smelite-backend"
+>>>>>>> edd1c3f145e3aa847d396320a8d0e871c61bd8ba
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
