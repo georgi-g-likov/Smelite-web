@@ -3,6 +3,8 @@ package com.smelite.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Date;
+
 @Entity
 @Data
 @Builder
@@ -19,8 +21,6 @@ public class CraftProfile {
     @Column(length = 1000)
     private String description; // описание на занаята
 
-    private int experienceYears; // години опит
-
     private String location; // местоположение (град, село и т.н.)
 
     private String lessonType; // индивидуално / групово / смесено
@@ -29,9 +29,13 @@ public class CraftProfile {
 
     private String images; // CSV от image URLs (или filenames)
 
+    @Temporal(TemporalType.DATE)
+    @Column(name = "scheduled_date")
+    private Date scheduledDate;
+
     private boolean wantsWorkshopSupport; // ако няма ателие - иска ли помощ от платформата
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "master_id")
     private Master master; // връзка към майстора
 }

@@ -5,29 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="184617e0-35f3-4070-8092-a7cdccb69c7c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smelite-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/dto/AuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/dto/AuthResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/dto/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/dto/RegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/controller/CraftProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/controller/CraftProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/entity/CraftProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/entity/CraftProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/entity/Master.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/entity/Master.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/repository/CraftProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/repository/CraftProfileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/repository/MasterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/repository/MasterRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/service/UserDetailsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/config/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/controller/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/SmeliteApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/SmeliteApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/controller/ApprenticeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/controller/ApprenticeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/controller/AuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/controller/MasterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/controller/MasterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/AuthRequest$AuthRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/AuthRequest$AuthRequestBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/AuthRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/AuthRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/AuthResponse$AuthResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/AuthResponse$AuthResponseBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/AuthResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/AuthResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/LoginRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/LoginRequest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/RegisterRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/dto/RegisterRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/User$Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/Apprentice$ApprenticeBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/Apprentice$ApprenticeBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/Apprentice$ApprenticeBuilderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/Apprentice$ApprenticeBuilderImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/Apprentice.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/Apprentice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/Master$MasterBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/Master$MasterBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/Master$MasterBuilderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/Master$MasterBuilderImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/Master.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/Master.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/Role.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/User$UserBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/User$UserBuilderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/User$UserBuilderImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/repository/ApprenticeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/repository/ApprenticeRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/repository/MasterRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/repository/MasterRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/security/CustomUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/security/CustomUserDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/security/JwtAuthFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/security/JwtAuthFilter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/security/JwtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/security/JwtService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/security/UserDetailsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/security/SecurityConfiguration$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/security/SecurityConfiguration$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/security/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/security/SecurityConfiguration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/service/AuthService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-frontend/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/service/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/classes/com/smelite/service/UserDetailsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/smelite-backend-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/smelite-backend-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-backend/target/smelite-backend-1.0.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/target/smelite-backend-1.0.0.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smelite-frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-frontend/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,26 +67,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2z8yyRaK78d0HjnqL5SCXv6U7o7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.SmeliteApplication.executor": "Run",
-    "Maven.smelite-backend [clean].executor": "Run",
-    "Maven.smelite-backend [install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "smelite-backend"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.SmeliteApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.smelite-backend [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.smelite-backend [install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;smelite-backend&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="184617e0-35f3-4070-8092-a7cdccb69c7c" name="Changes" comment="" />
