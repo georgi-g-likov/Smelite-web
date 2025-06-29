@@ -323,6 +323,7 @@ width: 520px;
   background: linear-gradient(135deg, #388e3c, #81c784);
 }
 
+
 /* ЗАНАЯТИ */
 .crafts-hero {
   position: relative;
@@ -332,16 +333,7 @@ width: 520px;
   justify-content: flex-start;
   margin-bottom: 48px;
 }
-/* .crafts-hero-bg {
-  position: absolute;
-  left: 0; top: 0;
-  width: 58vw;
-  height: 390px;
-  background: #fff;
-  border-radius: 0 0 300px 0 / 0 0 120px 0;
-  z-index: 0;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.03);
-} */
+
 .crafts-hero-main {
   display: flex;
   align-items: flex-end;    /* така листата ще са долу до ръба на снимката */
@@ -392,13 +384,6 @@ width: 520px;
 }
 
 
-
-/* .decor-leaf {
-  width: 112px;
-  height: 62px;
-  display: block;
-} */
-
 .crafts-hero-title {
   position: absolute;
   right: 80px;
@@ -409,8 +394,8 @@ width: 520px;
   letter-spacing: 2px;
   z-index: 5;
 }
-
-/* Responsive (по избор)
+/* 
+Респонсив по избор */
 @media (max-width: 900px) {
   .crafts-hero-bg {
     width: 98vw;
@@ -433,7 +418,7 @@ width: 520px;
     top: 60px;
     font-size: 1.4em;
   }
-} */
+}
 
 
 .crafts-carousel {

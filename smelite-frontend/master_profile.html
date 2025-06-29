@@ -5,97 +5,480 @@
   <title>Профил на майстор | Смелите</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { font-family: Montserrat, Arial, sans-serif; background: #faf6f1; color: #32241e; margin: 0; padding: 0;}
+    .main-header { display: flex; justify-content: space-between; align-items: center; padding: 17px 4vw 11px 4vw; background: #fff; box-shadow:0 3px 22px #f5ece1;}
+    .main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 36px;}
+    .main-nav a { color: #af7c40; text-decoration: none; font-weight: 600; font-size: 1.05em; letter-spacing: .01em;}
+    .main-nav a:hover { text-decoration: underline;}
+    .logo-svg { height: 32px; vertical-align: middle;}
+    .logo-initials-svg { height: 29px; vertical-align: middle; margin-right:9px;}
+    .support-btn { background:linear-gradient(90deg, #b57841 20%, #e3b078 80%); color: #fff; font-weight: 600; padding: 7px 20px; border-radius: 12px; text-decoration: none;}
+    .profile-section { max-width: 800px; margin: 30px auto 30px auto; background: #fff; border-radius: 23px; box-shadow: 0 6px 42px #f5e8d3; padding: 32px 24px 26px 24px;}
+    .profile-header { display: flex; gap: 32px; margin-bottom: 33px; }
+    .profile-avatar {width: 92px; height: 92px; object-fit: cover; border-radius: 50%; box-shadow: 0 2px 16px #e7dfd3;}
+    .profile-header h2 { margin: 0 0 5px 0; font-weight: 700; font-size: 2em;}
+    .profile-role { color: #b57841; font-size: 1.14em; font-weight: 600;}
+    .profile-bio { margin: 10px 0 8px 0; font-size: 1.03em;}
+    .profile-details-mini { font-size: 0.99em; color: #68502b; margin-bottom: 11px;}
+    .profile-details-mini div { margin-bottom: 2px;}
+    .profile-stats { display: flex; gap: 22px; margin: 12px 0 14px 0;}
+    .profile-stat { text-align: center;}
+    .stat-count { font-size: 1.28em; font-weight: bold; }
+    .stat-label { color: #b57841; font-size: 0.95em;}
+    .profile-edit-btn, .profile-workshop-btn, .profile-delete-btn { background:linear-gradient(90deg, #b57841 20%, #e3b078 80%); color: #fff; font-weight:600; border: none; border-radius: 11px; padding:8px 19px; margin-right:8px; margin-top:6px; cursor:pointer;}
+    .profile-delete-btn { background: #f44; background:linear-gradient(90deg, #f44 40%, #e98e8e 100%);}
+    .profile-workshop-btn {background:linear-gradient(90deg, #688d4c 20%, #9bc385 80%);}
+    .profile-courses { margin: 36px 0 26px 0;}
+    .courses-list { margin: 14px 0 7px 0;}
+    .course-card { background: #fff; border:1px solid #f1e9de; border-radius: 14px; box-shadow: 0 2px 18px #f8f3ea; padding: 9px 12px 8px 9px; margin-bottom:12px; display:flex; align-items:center; gap:16px;}
+    .course-title { font-weight: 500; font-size: 1.11em; margin-left:4px;}
+    .add-course-btn { margin-top: 8px; background:linear-gradient(90deg, #b57841 20%, #e3b078 80%); color:#fff; border:none; border-radius: 10px; padding:8px 18px; cursor:pointer; font-weight:600;}
+    .course-edit-btn, .course-delete-btn { padding:5px 13px; border-radius:7px; border:none; font-size:0.99em; cursor:pointer;}
+    .course-edit-btn { background:#eee;}
+    .course-edit-btn:hover, .course-delete-btn:hover { opacity:0.85; }
+    .course-delete-btn { background:#f66; color:#fff;}
+    .portfolio-list { margin: 7px 0 0 0; display: flex; flex-wrap: wrap; gap: 8px;}
+    .portfolio-list img { width: 96px; height: 96px; object-fit: cover; border-radius: 15px; box-shadow: 0 2px 16px #e7dfd3;}
+    .profile-apprentices { margin:38px 0 26px 0;}
+    .apprentices-list { margin-top: 10px; }
+    .apprentice-row { display: flex; align-items: center; gap: 13px; padding: 7px 0; border-bottom: 1px solid #eee8dd; font-size: .99em; }
+    .apprentice-name { font-weight: 600; color: #ad741e;}
+    .apprentice-email { color: #666; }
+    .apprentice-lesson-date, .apprentice-lesson-type, .apprentice-lesson-status { color:#a07a2d;}
+    .profile-actions { margin-top:34px; text-align:right;}
+    .profile-logout-btn { background: #eee; color: #6b4a26; font-weight: 600; border: none; border-radius: 9px; padding:8px 19px; cursor:pointer; font-size:1em;}
+    @media (max-width: 900px) {.profile-header { flex-direction: column; align-items: flex-start; gap:17px;} .profile-section {max-width:99vw; padding:10vw 3vw 6vw 3vw;}}
+    @media (max-width: 600px) {.portfolio-list img {width:56px;height:56px;}}
+  </style>
 </head>
 <body>
-  <section class="profile-section">
-   <div class="profile-header">
-    <img src="images/avatar-default.png" alt="Аватар" class="profile-avatar">
+<header class="main-header">
+  <div class="logo-link">
+      <img src="images/smelitebg.svg" alt="СВЖ" class="logo-initials-svg">
+      <img src="images/smelitelogo-02.svg" alt="Смелите" class="logo-svg">
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Начало</a></li>
+      <li><a href="catalog.html">Каталог със занаяти</a></li>
+      <li><a href="blog.html">Блог</a></li>
+      <li><a href="index.html#contact">СВЪРЖИ СЕ С НАС</a></li>
+    </ul>
+  </nav>
+  <div class="header-actions">
+    <a href="shop.html" class="support-btn">
+      ПОДКРЕПИ НИ <span class="arrow">→</span>
+    </a>
+  </div>
+</header>
+
+<section class="profile-section">
+  <div class="profile-header">
+    <img id="profileAvatar" src="images/avatar-default.png" alt="Аватар" class="profile-avatar">
     <div>
-      <h2>Георги Колев</h2>
-      <span class="profile-role">Майстор дърворезба</span>
-      <div class="profile-bio">
-        Занимавам се с дърворезба от 15 години. Обичам да предавам занаята на новите поколения!
-      </div>
+      <h2 id="profileName">Име на майстор</h2>
+      <span class="profile-role" id="profileCraft">Майстор</span>
+      <div class="profile-bio" id="profileBio"></div>
       <div class="profile-details-mini">
-        <div><b>Локация:</b> Велико Търново</div>
-        <div><b>Ателие:</b> ул. Хаджи Димитър 12</div>
-        <div><b>Вид уроци:</b> Групови и индивидуални</div>
-        <div><b>Цена на урок:</b> 50-80 лв.</div>
-        <div><b>Свободни дати:</b> <a href="#">Виж календара</a></div>
+        <div><b>Локация:</b> <span id="profileLocation"></span></div>
+        <div><b>Ателие:</b> <span id="profileWorkshop"></span></div>
+        <div><b>Вид уроци:</b> <span id="profileTeaching"></span></div>
+        <div><b>Цена на урок:</b> <span id="profilePrice"></span></div>
       </div>
       <div class="profile-stats">
-        <div class="profile-stat"><div class="stat-count">7</div><div class="stat-label">Курсове</div></div>
-        <div class="profile-stat"><div class="stat-count">21</div><div class="stat-label">Ученици</div></div>
-        <div class="profile-stat"><div class="stat-count">4.9</div><div class="stat-label">Рейтинг</div></div>
-        <div class="profile-stat"><div class="stat-count">15</div><div class="stat-label">г. опит</div></div>
+        <div class="profile-stat"><div class="stat-count" id="profileCourses">1</div><div class="stat-label">Курсове</div></div>
+        <div class="profile-stat"><div class="stat-count" id="profileStudents">0</div><div class="stat-label">Ученици</div></div>
+        <div class="profile-stat"><div class="stat-count" id="profileRating">–</div><div class="stat-label">Рейтинг</div></div>
+        <div class="profile-stat"><div class="stat-count" id="profileExp">–</div><div class="stat-label">г. опит</div></div>
       </div>
-      <button class="profile-edit-btn">Редактирай профил</button>
-      <button class="profile-workshop-btn">Свържи се с платформата</button>
+      <button class="profile-edit-btn" onclick="openEditModal()">Редактирай профил</button>
+      <button class="profile-delete-btn" onclick="deleteProfile()">Изтрий профил</button>
+      <button class="profile-workshop-btn" id="profileWorkshopBtn" style="display:none;">Свържи се с платформата</button>
     </div>
   </div>
 
-    <div class="profile-courses">
-      <h3>Моите курсове</h3>
-      <div class="courses-list">
-        <div class="course-card">
-          <img src="images/woodcarving1.jpg" alt="">
-          <div class="course-title">Основи на дърворезбата</div>
-          <div class="course-actions">
-            <button class="course-edit-btn">Редактирай</button>
-            <button class="course-delete-btn">Изтрий</button>
-          </div>
-        </div>
-        <div class="course-card">
-          <img src="images/woodcarving2.jpg" alt="">
-          <div class="course-title">Напреднали техники</div>
-          <div class="course-actions">
-            <button class="course-edit-btn">Редактирай</button>
-            <button class="course-delete-btn">Изтрий</button>
-          </div>
-        </div>
-        <!-- още курсове -->
-      </div>
-      <button class="add-course-btn">Добави нов курс</button>
-    </div>
+  <div class="profile-courses">
+    <h3>Моите курсове</h3>
+    <div class="courses-list" id="coursesList"></div>
+    <button class="add-course-btn" onclick="openCourseModal()">Добави нов курс</button>
+  </div>
 
-    <div class="profile-apprentices">
-      <h3>Моите ученици</h3>
-      <div class="apprentices-list">
+  <div class="profile-apprentices">
+    <h3>Записани чираци</h3>
+    <div class="apprentices-list" id="apprenticesList"></div>
+  </div>
+
+  <div class="profile-portfolio">
+    <h3>Портфолио</h3>
+    <div class="portfolio-list" id="portfolioList"></div>
+  </div>
+  <div class="profile-actions">
+    <button class="profile-logout-btn" onclick="logout()">Изход</button>
+  </div>
+
+  <!-- Модален прозорец за редакция на профил -->
+  <div id="editModal" style="display:none; position:fixed; left:0; top:0; width:100vw; height:100vh; background:rgba(45,38,22,0.25); z-index:99; align-items: center; justify-content: center;">
+    <form id="editForm" style="background:#fff; border-radius:22px; max-width:440px; width:96vw; margin:80px auto 0 auto; box-shadow: 0 8px 40px #e5d7c7; padding:32px 28px 22px 28px; display:flex; flex-direction:column; gap:15px; position:relative;">
+      <span onclick="closeEditModal()" style="position:absolute;top:16px;right:20px; font-size:1.6em; color:#b57841; cursor:pointer;">×</span>
+      <h3 style="margin-top:0; text-align:center;">Редакция на профила</h3>
+      <label>Име на занаят:
+        <input type="text" name="craftName" required maxlength="32">
+      </label>
+      <label>Кратко описание:
+        <textarea name="description" required maxlength="220"></textarea>
+      </label>
+      <div style="display:flex; gap:10px;">
+        <label style="flex:1">Години опит:
+          <input type="number" name="experienceYears" min="0" max="99" required>
+        </label>
+        <label style="flex:2">Локация:
+          <input type="text" name="location" maxlength="38">
+        </label>
+      </div>
+      <label>Промени снимки (до 5):
+        <input type="file" name="images" id="editImages" accept="image/*" multiple>
+        <div id="editImagePreview" style="display:flex; gap:8px; margin-top:8px;"></div>
+      </label>
+      <label>Тип обучение:
+        <select name="teachingType" id="editTeachingType" required>
+          <option value="">--Избери--</option>
+          <option value="individual">Индивидуално</option>
+          <option value="group">Групово</option>
+          <option value="both">И двете</option>
+        </select>
+      </label>
+      <div id="editPriceRangeWrap" style="display: flex; gap: 10px;">
+        <label style="flex:1">Минимална цена:
+          <input type="number" name="priceMin" min="0">
+        </label>
+        <label style="flex:1">Максимална цена:
+          <input type="number" name="priceMax" min="0">
+        </label>
+      </div>
+      <label>
+        <input type="checkbox" name="needsWorkshopSupport" id="editNeedsWorkshopSupport">
+        Нямам ателие, искам съдействие за уъркшоп
+      </label>
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button type="button" onclick="closeEditModal()" style="background:#eee; color:#32241e; border-radius:8px; border:none; padding:8px 18px; cursor:pointer;">Отказ</button>
+        <button type="submit" style="background:linear-gradient(90deg, #b57841 20%, #e3b078 80%); color:#fff; border-radius:8px; border:none; padding:8px 18px; cursor:pointer;">Запази</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Модал за добавяне/редакция на курс -->
+  <div id="courseModal" style="display:none; position:fixed; left:0; top:0; width:100vw; height:100vh; background:rgba(45,38,22,0.18); z-index:101; align-items:center; justify-content:center;">
+    <form id="courseForm" style="background:#fff; border-radius:19px; max-width:380px; width:96vw; margin:60px auto 0 auto; box-shadow:0 4px 36px #e3d3b8; padding:27px 22px 16px 22px; display:flex; flex-direction:column; gap:14px; position:relative;">
+      <span onclick="closeCourseModal()" style="position:absolute;top:11px;right:18px; font-size:1.5em; color:#b57841; cursor:pointer;">×</span>
+      <h4 id="courseModalTitle" style="margin-top:0;text-align:center;">Нов курс</h4>
+      <label>Заглавие на курс:
+        <input type="text" name="courseTitle" required maxlength="60">
+      </label>
+      <label>Снимка:
+        <input type="file" name="courseImg" id="courseImg" accept="image/*">
+        <div id="courseImgPreview" style="margin-top:7px;"></div>
+      </label>
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button type="button" onclick="closeCourseModal()" style="background:#eee; color:#32241e; border-radius:8px; border:none; padding:7px 16px; cursor:pointer;">Отказ</button>
+        <button type="submit" style="background:linear-gradient(90deg, #b57841 20%, #e3b078 80%); color:#fff; border-radius:8px; border:none; padding:7px 16px; cursor:pointer;">Запази</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  // Зареждаме занаята
+  let crafts = JSON.parse(localStorage.getItem('crafts') || '[]');
+  let craftIndex = crafts.length-1;
+  let craft = crafts[craftIndex] || {};
+  if (!craft.courses) craft.courses = [];
+
+  function renderProfile() {
+    document.getElementById('profileName').textContent = craft?.craftName || 'Майстор занаят';
+    document.getElementById('profileCraft').textContent = 'Майстор ' + (craft?.craftName || '');
+    document.getElementById('profileBio').textContent = craft?.description || '–';
+    document.getElementById('profileLocation').textContent = craft?.location || '–';
+    document.getElementById('profileWorkshop').textContent = craft?.needsWorkshopSupport ? 'Ще организираме уъркшоп!' : (craft?.location ? 'Лично ателие' : '–');
+    let teachingType = '–';
+    if (craft.teachingType === 'individual') teachingType = 'Индивидуални';
+    else if (craft.teachingType === 'group') teachingType = 'Групови';
+    else if (craft.teachingType === 'both') teachingType = 'Групови и индивидуални';
+    document.getElementById('profileTeaching').textContent = teachingType;
+    document.getElementById('profilePrice').textContent =
+      (craft.priceMin && craft.priceMax) ? `${craft.priceMin} - ${craft.priceMax} лв.` :
+      (craft.priceMin) ? `${craft.priceMin} лв.` : 'По договаряне';
+    document.getElementById('profileExp').textContent = craft?.experienceYears || '–';
+
+    const portfolioList = document.getElementById('portfolioList');
+    portfolioList.innerHTML = '';
+    if (craft?.images && craft.images.length) {
+      craft.images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        portfolioList.appendChild(img);
+      });
+    } else {
+      portfolioList.innerHTML = '<img src="images/portfolio1.jpg"><img src="images/portfolio2.jpg">';
+    }
+    document.getElementById('profileWorkshopBtn').style.display = craft?.needsWorkshopSupport ? 'inline-block' : 'none';
+    renderCourses();
+    renderApprentices();
+  }
+
+  // --- Редакция на профил ---
+  function openEditModal() {
+    const form = document.getElementById('editForm');
+    form.craftName.value = craft.craftName || '';
+    form.description.value = craft.description || '';
+    form.experienceYears.value = craft.experienceYears || '';
+    form.location.value = craft.location || '';
+    form.teachingType.value = craft.teachingType || '';
+    form.priceMin.value = craft.priceMin || '';
+    form.priceMax.value = craft.priceMax || '';
+    form.needsWorkshopSupport.checked = !!craft.needsWorkshopSupport;
+    const preview = document.getElementById('editImagePreview');
+    preview.innerHTML = '';
+    if (craft.images && craft.images.length) {
+      craft.images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.style.width = '52px';
+        img.style.height = '52px';
+        img.style.borderRadius = '10px';
+        preview.appendChild(img);
+      });
+    }
+    document.getElementById('editModal').style.display = 'flex';
+  }
+  function closeEditModal() {
+    document.getElementById('editModal').style.display = 'none';
+  }
+  document.getElementById('editImages').onchange = function(e) {
+    const files = Array.from(e.target.files).slice(0, 5);
+    const preview = document.getElementById('editImagePreview');
+    preview.innerHTML = '';
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        const img = document.createElement('img');
+        img.src = ev.target.result;
+        img.style.width = '52px';
+        img.style.height = '52px';
+        img.style.borderRadius = '10px';
+        preview.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  };
+  document.getElementById('editTeachingType').onchange = function(e) {
+    document.getElementById('editPriceRangeWrap').style.display = e.target.value ? 'flex' : 'none';
+  };
+  document.getElementById('editForm').onsubmit = async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const newCraft = {
+      craftName: form.craftName.value.trim(),
+      description: form.description.value.trim(),
+      experienceYears: form.experienceYears.value,
+      location: form.location.value.trim(),
+      teachingType: form.teachingType.value,
+      priceMin: form.priceMin.value,
+      priceMax: form.priceMax.value,
+      needsWorkshopSupport: form.needsWorkshopSupport.checked,
+      images: [],
+      courses: craft.courses || []
+    };
+    const files = Array.from(form.images.files).slice(0, 5);
+    if (files.length) {
+      for (let file of files) {
+        const reader = new FileReader();
+        await new Promise(resolve => {
+          reader.onload = function(ev) {
+            newCraft.images.push(ev.target.result);
+            resolve();
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+    } else {
+      newCraft.images = craft.images || [];
+    }
+    crafts[craftIndex] = newCraft;
+    localStorage.setItem('crafts', JSON.stringify(crafts));
+    craft = newCraft;
+    closeEditModal();
+    renderProfile();
+  };
+
+  // Изтриване на профила
+  function deleteProfile() {
+    if (!confirm('Сигурен ли си, че искаш да изтриеш профила си? Тази операция е необратима!')) return;
+    crafts.splice(craftIndex, 1);
+    localStorage.setItem('crafts', JSON.stringify(crafts));
+    window.location.href = "index.html";
+  }
+
+  function logout() {
+    localStorage.removeItem('user');
+    window.location.href = "index.html";
+  }
+
+  // ----- КУРСОВЕ -----
+  document.getElementById('courseImg').onchange = function(e) {
+    const preview = document.getElementById('courseImgPreview');
+    preview.innerHTML = '';
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        const img = document.createElement('img');
+        img.src = ev.target.result;
+        img.style.width = '64px';
+        img.style.height = '64px';
+        img.style.objectFit = 'cover';
+        img.style.borderRadius = '10px';
+        preview.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  let editingCourseIndex = null;
+
+  function openCourseModal(index = null) {
+    editingCourseIndex = index;
+    const modal = document.getElementById('courseModal');
+    const form = document.getElementById('courseForm');
+    document.getElementById('courseModalTitle').textContent = index === null ? 'Нов курс' : 'Редакция на курс';
+    form.reset();
+    document.getElementById('courseImgPreview').innerHTML = '';
+
+    if (index !== null) {
+      const course = craft.courses[index];
+      form.courseTitle.value = course.title;
+      if (course.img) {
+        const img = document.createElement('img');
+        img.src = course.img;
+        img.style.width = '64px';
+        img.style.height = '64px';
+        img.style.objectFit = 'cover';
+        img.style.borderRadius = '10px';
+        document.getElementById('courseImgPreview').appendChild(img);
+      }
+    }
+    modal.style.display = 'flex';
+  }
+
+  function closeCourseModal() {
+    document.getElementById('courseModal').style.display = 'none';
+    editingCourseIndex = null;
+  }
+
+  document.getElementById('courseForm').onsubmit = function(e) {
+    e.preventDefault();
+    const form = e.target;
+    let imgData = null;
+    const file = form.courseImg.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        imgData = ev.target.result;
+        saveCourse(form, imgData);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      if (editingCourseIndex !== null && craft.courses[editingCourseIndex].img) {
+        imgData = craft.courses[editingCourseIndex].img;
+      }
+      saveCourse(form, imgData);
+    }
+  };
+
+  function saveCourse(form, imgData) {
+    const course = {
+      title: form.courseTitle.value.trim(),
+      img: imgData || ""
+    };
+    if (editingCourseIndex === null) {
+      craft.courses.push(course);
+    } else {
+      craft.courses[editingCourseIndex] = course;
+    }
+    crafts[craftIndex] = craft;
+    localStorage.setItem('crafts', JSON.stringify(crafts));
+    closeCourseModal();
+    renderCourses();
+  }
+
+  function renderCourses() {
+    const list = document.getElementById('coursesList');
+    list.innerHTML = '';
+    if (!craft.courses || !craft.courses.length) {
+      list.innerHTML = '<div style="color:#aaa; margin:10px 0;">Нямаш добавени курсове</div>';
+      document.getElementById('profileCourses').textContent = 0;
+      return;
+    }
+    document.getElementById('profileCourses').textContent = craft.courses.length;
+    craft.courses.forEach((course, i) => {
+      const card = document.createElement('div');
+      card.className = 'course-card';
+      const img = document.createElement('img');
+      img.src = course.img || 'images/portfolio1.jpg';
+      img.style.width = '60px'; img.style.height = '60px'; img.style.objectFit = 'cover'; img.style.borderRadius = '9px';
+      card.appendChild(img);
+      const title = document.createElement('div');
+      title.textContent = course.title;
+      title.className = 'course-title';
+      card.appendChild(title);
+      const actions = document.createElement('div');
+      actions.style.marginLeft = 'auto';
+      actions.style.display = 'flex';
+      actions.style.gap = '8px';
+      actions.innerHTML =
+        `<button class="course-edit-btn" onclick="openCourseModal(${i})">Редактирай</button>
+         <button class="course-delete-btn" onclick="deleteCourse(${i})">Изтрий</button>`;
+      card.appendChild(actions);
+      list.appendChild(card);
+    });
+  }
+
+  function deleteCourse(i) {
+    if (!confirm('Сигурен ли си, че искаш да изтриеш този курс?')) return;
+    craft.courses.splice(i, 1);
+    crafts[craftIndex] = craft;
+    localStorage.setItem('crafts', JSON.stringify(crafts));
+    renderCourses();
+  }
+
+  // ----- ЗАПИСАНИ ЧИРАЦИ -----
+  function renderApprentices() {
+    // Вземи името на текущия майстор
+    const masterName = craft?.craftName || craft?.masterName || '';
+    // Вземи всички букинги (уроци) на чираци
+    const bookings = JSON.parse(localStorage.getItem('apprenticeLessons') || '[]');
+    // Филтрирай тези, записани при този майстор
+    const apprentices = bookings.filter(b => b.master === masterName);
+    const apprenticesList = document.getElementById('apprenticesList');
+    if (!apprentices.length) {
+      apprenticesList.innerHTML = '<div style="color:#a68b63; font-size:1.12em;">Все още няма записани чираци за твоите уроци.</div>';
+      return;
+    }
+    apprenticesList.innerHTML = '';
+    apprentices.forEach(b => {
+      apprenticesList.innerHTML += `
         <div class="apprentice-row">
-          <img src="images/avatar-apprentice1.png" class="apprentice-avatar" alt="">
-          <span class="apprentice-name">Иван Петров</span>
-          <span class="apprentice-progress">Курс: Завършен</span>
+          <span class="apprentice-name">${b.name || '(неизвестно име)'}</span>
+          <span class="apprentice-email">${b.email || ''}</span>
+          <span class="apprentice-lesson-date">Дата: ${b.date || '-'}</span>
+          <span class="apprentice-lesson-type">${b.lessonType === 'group' ? 'Групово' : 'Индивидуално'}</span>
+          <span class="apprentice-lesson-status">${b.status === 'завършен' ? 'Завършен' : 'Текущ'}</span>
         </div>
-        <div class="apprentice-row">
-          <img src="images/avatar-apprentice2.png" class="apprentice-avatar" alt="">
-          <span class="apprentice-name">Мария Илиева</span>
-          <span class="apprentice-progress">Курс: Текущ</span>
-        </div>
-        <!-- още ученици -->
-      </div>
-    </div>
+      `;
+    });
+  }
 
-    <div class="profile-reviews">
-      <h3>Отзиви от чираци</h3>
-      <ul>
-        <li>Много търпелив и вдъхновяващ майстор! – @user1</li>
-        <li>Научих много нови техники! – @user2</li>
-      </ul>
-    </div>
-
-    <div class="profile-portfolio">
-      <h3>Портфолио</h3>
-      <div class="portfolio-list">
-        <img src="images/portfolio1.jpg" alt="">
-        <img src="images/portfolio2.jpg" alt="">
-        <!-- още снимки -->
-      </div>
-    </div>
-
-    <div class="profile-actions">
-      <button class="profile-logout-btn">Изход</button>
-    </div>
-  </section>
+  renderProfile();
+</script>
 </body>
 </html>

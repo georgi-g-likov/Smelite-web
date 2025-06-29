@@ -6,15 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="184617e0-35f3-4070-8092-a7cdccb69c7c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/smelite-backend/src/main/java/com/smelite/config/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,23 +15,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2z8yyRaK78d0HjnqL5SCXv6U7o7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="184617e0-35f3-4070-8092-a7cdccb69c7c" name="Changes" comment="" />
