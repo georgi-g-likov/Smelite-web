@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>Създай профил на занаят</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Montserrat, Arial, sans-serif; background: #faf6f1; color: #32241e; margin: 0; padding: 0; }
+    .container { max-width: 420px; margin: 44px auto 0 auto; background: #fff; border-radius: 20px; box-shadow: 0 4px 40px rgba(120,100,80,0.06); padding: 32px 26px 28px 26px; }
+    h2 { text-align: center; font-weight: 700; letter-spacing: 0.02em; margin-top: 0; margin-bottom: 28px; }
+    label { display: block; margin-bottom: 12px; font-size: 1rem; }
+    input[type="text"], input[type="number"], input[type="email"], input[type="password"], select, textarea {
+      width: 100%; padding: 9px 12px; border-radius: 9px; border: 1px solid #ece6df; margin-top: 6px;
+      font-size: 1rem; background: #f9f7f5; outline: none; transition: border .2s;
+    }
+    input:focus, textarea:focus, select:focus { border: 1.5px solid #c09664; background: #fff; }
+    textarea { resize: vertical; min-height: 62px; }
+    .inline { display: flex; gap: 12px; }
+    #imagePreview { display: flex; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
+    #imagePreview img { width: 60px; height: 60px; object-fit: cover; border-radius: 12px; box-shadow: 0 1px 8px #eee; }
+    #priceRangeWrap { gap: 10px; margin-bottom: 10px; }
+    button[type="submit"] {
+      background: linear-gradient(90deg, #b57841 20%, #e3b078 80%);
+      color: #fff; font-weight: 600; font-size: 1.12rem;
+      border: none; border-radius: 11px; padding: 13px 0; width: 100%;
+      margin-top: 15px; cursor: pointer; letter-spacing: .05em;
+      box-shadow: 0 2px 10px #eee;
+      transition: background .18s, transform .12s;
+    }
+    button[type="submit"]:hover { background: #c18748; transform: translateY(-2px) scale(1.03); }
+    .success { text-align: center; color: #2e8836; font-weight: 600; font-size: 1.05rem; margin-top: 18px;}
+    .checkbox-row { display: flex; align-items: center; margin: 12px 0 8px 0; }
+    .checkbox-row label { margin-bottom: 0; margin-left: 8px; font-size: .99rem;}
+    @media (max-width:600px) {
+      .container { max-width: 97vw; padding: 19px 4vw 20px 4vw;}
+      #imagePreview img { width: 44px; height: 44px; }
+      button[type="submit"] { font-size: 1rem;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Създай профил на занаят</h2>
+    <form id="craftForm" autocomplete="off">
+      <label>Име на занаят:
+        <input type="text" name="craftName" required maxlength="32" placeholder="Пр. Дърворезба">
+      </label>
+      <label>Кратко описание:
+        <textarea name="description" required maxlength="220" placeholder="Кратко опиши занаята си, напр. стил, техники, специализации..."></textarea>
+      </label>
+      <div class="inline">
+        <label style="flex:1">Години опит:
+          <input type="number" name="experienceYears" min="0" max="99" required placeholder="Пр. 8">
+        </label>
+        <label style="flex:2">Локация:
+          <input type="text" name="location" maxlength="38" placeholder="Град или село">
+        </label>
+      </div>
+      <label>Снимки към занаята (до 5):
+        <input type="file" name="images" id="images" accept="image/*" multiple>
+        <div id="imagePreview"></div>
+      </label>
+      <label>Тип обучение:
+        <select name="teachingType" id="teachingType" required>
+          <option value="">--Избери--</option>
+          <option value="individual">Индивидуално</option>
+          <option value="group">Групово</option>
+          <option value="both">И двете</option>
+        </select>
+      </label>
+      <div id="priceRangeWrap" class="inline" style="display: none;">
+        <label style="flex:1">Минимална цена:
+          <input type="number" name="priceMin" min="0" placeholder="лв.">
+        </label>
+        <label style="flex:1">Максимална цена:
+          <input type="number" name="priceMax" min="0" placeholder="лв.">
+        </label>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" name="needsWorkshopSupport" id="needsWorkshopSupport" style="width:18px;height:18px;">
+        <label for="needsWorkshopSupport">Нямам ателие, искам съдействие за уъркшоп</label>
+      </div>
+      <button type="submit">Създай занаят</button>
+    </form>
+    <div id="craftSaved" class="success" style="display:none;">Занаятът е запазен успешно!</div>
+  </div>
+  <script>
+    // Миниатюри при избор на снимки
+    document.getElementById('images').onchange = function(e) {
+      const files = Array.from(e.target.files).slice(0, 5);
+      const preview = document.getElementById('imagePreview');
+      preview.innerHTML = '';
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          const img = document.createElement('img');
+          img.src = ev.target.result;
+          preview.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+      });
+    };
+
+    // Скриване/показване на полетата за цени
+    document.getElementById('teachingType').onchange = function(e) {
+      document.getElementById('priceRangeWrap').style.display =
+        e.target.value ? 'flex' : 'none';
+    };
+
+    // Формата за създаване на занаят
+    document.getElementById('craftForm').onsubmit = async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const craft = {
+        craftName: form.craftName.value.trim(),
+        description: form.description.value.trim(),
+        experienceYears: form.experienceYears.value,
+        location: form.location.value.trim(),
+        teachingType: form.teachingType.value,
+        priceMin: form.priceMin.value,
+        priceMax: form.priceMax.value,
+        needsWorkshopSupport: form.needsWorkshopSupport.checked,
+        images: []
+      };
+      // Качваме до 5 снимки като base64 (това е за демо, иначе ще ги пращаш към бекенд)
+      const files = Array.from(form.images.files).slice(0, 5);
+      for (let file of files) {
+        const reader = new FileReader();
+        await new Promise(resolve => {
+          reader.onload = function(ev) {
+            craft.images.push(ev.target.result);
+            resolve();
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+      // Записваме в localStorage (като масив)
+      let crafts = JSON.parse(localStorage.getItem('crafts') || '[]');
+      crafts.push(craft);
+      localStorage.setItem('crafts', JSON.stringify(crafts));
+      document.getElementById('craftSaved').style.display = 'block';
+      setTimeout(() => window.location.href = 'master_profile.html', 1100);
+    };
+  </script>
+</body>
+</html>

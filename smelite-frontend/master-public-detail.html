@@ -5,83 +5,219 @@
   <title>Профил на майстор | Смелите</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .booking-success {display:none;text-align:center;color:#4a8429;background:#e3f6da;border-radius:14px;margin-top:24px;padding:15px 0;font-size:1.15rem;}
+    .master-header {display:flex; gap:28px; align-items:flex-start; margin-bottom:18px;}
+    .master-avatar {width:80px;height:80px;object-fit:cover;border-radius:50%; box-shadow:0 2px 16px #e7dfd3;}
+    .master-main-info {flex:1;}
+    .master-name {font-weight:700;font-size:1.28em;}
+    .master-type {color:#b57841;font-weight:600;}
+    .master-location {color:#7d612d;}
+    .master-exp {color:#856a29;font-size:.96em;}
+    .master-rating {color:#ab9739;}
+    .master-desc {margin:10px 0 7px 0;}
+    .master-profile-stats {display:flex;gap:15px;margin-bottom:9px;}
+    .profile-stat {text-align:center;}
+    .stat-count {font-size:1.18em;font-weight:600;}
+    .stat-label {color:#b57841;font-size:.97em;}
+    .master-contact-btn {background:linear-gradient(90deg,#b57841 20%,#e3b078 80%);color:#fff;border:none;border-radius:10px;padding:8px 18px;font-weight:600;cursor:pointer;margin-top:6px;}
+    .master-gallery {margin:18px 0 18px 0;}
+    .gallery-list {display:flex;gap:7px;flex-wrap:wrap;}
+    .gallery-list img {width:82px;height:82px;border-radius:13px;object-fit:cover;box-shadow:0 1px 12px #efe1cb;}
+    .master-booking-section {display:flex;align-items:flex-start;gap:25px;}
+    .booking-form label {display:block;margin-top:8px;}
+    .booking-btn {margin-top:13px;}
+    .master-reviews {margin-top:34px;}
+    .reviews-list {list-style:none;padding:0;}
+    .reviews-list li {margin-bottom:8px;}
+    .review-author {color:#b57841;font-weight:600;}
+    @media (max-width:650px) {
+      .master-header {flex-direction:column;gap:16px;}
+      .master-gallery .gallery-list img {width:56px;height:56px;}
+      .master-booking-section {flex-direction:column;}
+    }
+  </style>
 </head>
 <body>
-  <section class="master-profile-section">
+
+<header class="main-header">
+  <div class="logo-link">
+      <img src="images/smelitebg.svg" alt="СВЖ" class="logo-initials-svg">
+      <img src="images/smelitelogo-02.svg" alt="Смелите" class="logo-svg">
+  </div>
+  
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Начало</a></li>
+      <li><a href="catalog.html">Каталог със занаяти</a></li>
+      <li><a href="blog.html">Блог</a></li>
+      <li><a href="index.html#contact">СВЪРЖИ СЕ С НАС</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-actions">
+    <a href="shop.html" class="support-btn">
+      ПОДКРЕПИ НИ <span class="arrow">→</span>
+    </a>
+  </div>
+</header>
+
+  <section class="master-profile-section" id="profileSection">
+    <!-- Всичко ще се рендерира тук с JS -->
+  </section>
+<script>
+function handleBookingSubmit(e) {
+  e.preventDefault();
+  // --- Запиши букинга към apprenticeLessons (ако има профил на чирак) ---
+  // За по-смислен демо: можеш да добавиш userID/email на чирака
+  const lesson = {
+    master: master.masterName || master.craftName || '',
+    date: document.getElementById('date').value,
+    lessonType: document.querySelector('input[name="lesson-type"]:checked').value,
+    count: document.getElementById('count').value,
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+    notes: document.getElementById('notes').value,
+    price: master.priceMin || 50,
+    status: 'очаква потвърждение'
+  };
+  let apprenticeLessons = JSON.parse(localStorage.getItem('apprenticeLessons') || '[]');
+  apprenticeLessons.push(lesson);
+  localStorage.setItem('apprenticeLessons', JSON.stringify(apprenticeLessons));
+
+  // Показваш успеха
+  document.querySelector('.booking-form').style.display = 'none';
+  document.querySelector('.booking-success').style.display = 'block';
+  
+  // След 2.5 секунди – пренасочване към профила на чирака
+  setTimeout(function() {
+    window.location.href = "apprentice_profile.html";
+  }, 2500);
+}
+
+
+// Зареждаме майстора
+const crafts = JSON.parse(localStorage.getItem('crafts') || '[]');
+const idx = localStorage.getItem('selectedMaster');
+const master = crafts[idx];
+
+// Dummy fallback review и дата, ако няма данни
+const fallbackReviews = [
+  {author: "@stefanimi", text: "Много търпелив и вдъхновяващ майстор!"},
+  {author: "@vasilp", text: "Научих страхотни нови техники!"}
+];
+const fallbackDates = ["21.07.2025", "28.07.2025", "03.08.2025"];
+
+function renderMasterProfile() {
+  if (!master) {
+    document.getElementById('profileSection').innerHTML = '<div style="color:#b57841;">Майсторът не е намерен.</div>';
+    return;
+  }
+
+  // Сглоби галерията
+  let gallery = '';
+  if (master.images && master.images.length) {
+    gallery = master.images.map(img=>`<img src="${img}" alt="Портфолио">`).join('');
+  } else {
+    gallery = `
+      <img src="images/portfolio1.jpg" alt="">
+      <img src="images/portfolio2.jpg" alt="">
+      <img src="images/portfolio3.jpg" alt="">
+    `;
+  }
+
+  // Сглоби курсове (ако има)
+  let coursesStat = master.courses ? master.courses.length : 0;
+
+  // Опит
+  let expYears = master.experienceYears ? `${master.experienceYears} години опит` : "";
+
+  // Рейтинг (dummy)
+  let rating = "⭐ 4.9 (27 отзива)";
+
+  // Сглоби отзивите (ако има)
+  let reviews = fallbackReviews.map(r=>`<li><span class="review-author">${r.author}</span> ${r.text}</li>`).join('');
+  // TODO: можеш да разшириш master.reviews ако имаш такива
+
+  // Свободни дати
+  let availableDates = fallbackDates;
+  // Ако искаш да ги пазиш към профила – промени тук
+
+  // Тип уроци
+  let teachingType =
+    master.teachingType === 'individual' ? 'Индивидуални' :
+    master.teachingType === 'group' ? 'Групови' :
+    master.teachingType === 'both' ? 'Групови и индивидуални' : '-';
+
+  // Цена
+  let price = (master.priceMin && master.priceMax)
+    ? `${master.priceMin} - ${master.priceMax} лв.`
+    : "50-80 лв.";
+
+  // Master name
+  let masterName = master.masterName || master.craftName || 'Майстор';
+
+  // Галерия/портфолио
+  document.getElementById('profileSection').innerHTML = `
     <div class="master-header">
-      <img src="images/avatar-master1.png" alt="" class="master-avatar">
+      <img src="${(master.images && master.images.length) ? master.images[0] : 'images/avatar-master1.png'}" alt="" class="master-avatar">
       <div class="master-main-info">
-        <div class="master-name">Георги Колев</div>
-        <div class="master-type">Дърворезба</div>
-        <div class="master-location">Велико Търново</div>
-        <div class="master-exp">15 години опит</div>
-        <div class="master-rating">⭐ 4.9 (27 отзива)</div>
-        <div class="master-desc">
-          Занимавам се с дърворезба от 15 години. Обичам да предавам занаята на новите поколения! Предлагам индивидуални и групови обучения в моето ателие.
-        </div>
+        <div class="master-name">${masterName}</div>
+        <div class="master-type">${master.craftName || ''}</div>
+        <div class="master-location">${master.location || '-'}</div>
+        <div class="master-exp">${expYears}</div>
+        <div class="master-rating">${rating}</div>
+        <div class="master-desc">${master.description || ''}</div>
         <div class="master-profile-stats">
-          <div class="profile-stat"><div class="stat-count">7</div><div class="stat-label">Курсове</div></div>
+          <div class="profile-stat"><div class="stat-count">${coursesStat}</div><div class="stat-label">Курсове</div></div>
           <div class="profile-stat"><div class="stat-count">21</div><div class="stat-label">Ученици</div></div>
         </div>
-        <button class="master-contact-btn">Свържи се с майстора</button>
+        <button class="master-contact-btn" onclick="alert('Моля, попълнете формата за резервация!')">Свържи се с майстора</button>
       </div>
     </div>
     <div class="master-gallery">
-      <div class="gallery-list">
-        <img src="images/portfolio1.jpg" alt="">
-        <img src="images/portfolio2.jpg" alt="">
-        <img src="images/portfolio3.jpg" alt="">
-        <!-- още снимки -->
-      </div>
+      <div class="gallery-list">${gallery}</div>
     </div>
     <div class="master-booking-section">
-  <form class="booking-form" onsubmit="handleBookingSubmit(event)" style="flex:1;">
-    <h2 style="font-family:'Caveat',cursive;color:#b05a17;text-align:center;font-size:1.4rem;margin-bottom:18px;">Резервирай урок</h2>
-    <label for="lesson-type">Тип обучение:</label>
-    <div class="booking-type-group">
-      <label><input type="radio" name="lesson-type" value="group" checked> Групово</label>
-      <label><input type="radio" name="lesson-type" value="individual"> Индивидуално</label>
+      <form class="booking-form" onsubmit="handleBookingSubmit(event)" style="flex:1;">
+        <h2 style="font-family:'Caveat',cursive;color:#b05a17;text-align:center;font-size:1.4rem;margin-bottom:18px;">Резервирай урок</h2>
+        <label for="lesson-type">Тип обучение:</label>
+        <div class="booking-type-group">
+          <label><input type="radio" name="lesson-type" value="group" checked> Групово</label>
+          <label><input type="radio" name="lesson-type" value="individual"> Индивидуално</label>
+        </div>
+        <label for="date">Дата:</label>
+        <select id="date" required>
+          <option value="">Избери дата</option>
+          ${availableDates.map(d=>`<option>${d}</option>`).join('')}
+        </select>
+        <label for="count">Брой участници:</label>
+        <input type="number" id="count" min="1" max="8" value="1" required>
+        <label for="name">Име и фамилия:</label>
+        <input type="text" id="name" required placeholder="Вашето име">
+        <label for="email">Имейл:</label>
+        <input type="email" id="email" required placeholder="user@email.com">
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" required placeholder="+359 88 123 4567">
+        <label for="notes">Коментар (по избор):</label>
+        <textarea id="notes" rows="2" placeholder="Специални изисквания, бележки…"></textarea>
+        <div class="booking-price">Цена: ${price}</div>
+        <button class="booking-btn" type="submit">Резервирай</button>
+      </form>
+      <div class="booking-success">
+        Вашата резервация е приета! Ще се свържем с Вас за потвърждение.
+      </div>
     </div>
-    <label for="date">Дата:</label>
-    <select id="date" required>
-      <option value="">Избери дата</option>
-      <option>21.07.2025</option>
-      <option>28.07.2025</option>
-      <option>03.08.2025</option>
-    </select>
-    <label for="count">Брой участници:</label>
-    <input type="number" id="count" min="1" max="8" value="1" required>
-    <label for="name">Име и фамилия:</label>
-    <input type="text" id="name" required placeholder="Вашето име">
-    <label for="email">Имейл:</label>
-    <input type="email" id="email" required placeholder="user@email.com">
-    <label for="phone">Телефон:</label>
-    <input type="tel" id="phone" required placeholder="+359 88 123 4567">
-    <label for="notes">Коментар (по избор):</label>
-    <textarea id="notes" rows="2" placeholder="Специални изисквания, бележки…"></textarea>
-    <div class="booking-price">Цена: 50-80 лв.</div>
-    <button class="booking-btn" type="submit">Резервирай</button>
-  </form>
-  <div class="booking-success" style="display:none;text-align:center;color:#4a8429;background:#e3f6da;border-radius:14px;margin-top:24px;padding:15px 0;font-size:1.15rem;">
-    Вашата резервация е приета! Ще се свържем с Вас за потвърждение.
-  </div>
-</div>
     <div class="master-reviews">
       <h3>Отзиви от чираци</h3>
-      <ul class="reviews-list">
-        <li><span class="review-author">@stefanimi</span> Много търпелив и вдъхновяващ майстор!</li>
-        <li><span class="review-author">@vasilp</span> Научих страхотни нови техники!</li>
-        <!-- още отзиви -->
-      </ul>
+      <ul class="reviews-list">${reviews}</ul>
     </div>
-  </section>
-  <script>
-function handleBookingSubmit(e) {
-  e.preventDefault();
-  document.querySelector('.booking-form').style.display = 'none';
-  document.querySelector('.booking-success').style.display = 'block';
+  `;
 }
+
+renderMasterProfile();
 </script>
 
 </body>

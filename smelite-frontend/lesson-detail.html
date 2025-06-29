@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>Детайли за урок | Смелите</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { font-family: Montserrat, Arial, sans-serif; background: #faf6f1; color: #32241e; }
+    .lesson-detail-container { max-width: 540px; margin: 42px auto 0 auto; background: #fff; border-radius: 19px; box-shadow: 0 6px 32px #f2e6d2; padding: 30px 24px 34px 24px;}
+    h2 { color:#b57841; text-align:center; font-size:2em; margin-bottom:17px;}
+    .lesson-info-row {margin-bottom:12px;}
+    .lesson-info-label {font-weight:600;color:#b57841;}
+    .lesson-action {margin-top:32px;text-align:right;}
+    .lesson-teacher-link {background:#ece4c9;color:#7d6229;font-weight:600;border:none;border-radius:8px;padding:7px 19px;cursor:pointer;}
+    @media (max-width:600px) { .lesson-detail-container{max-width:99vw;padding:8vw 3vw 10vw 3vw;} }
+  </style>
+</head>
+<body>
+  <div class="lesson-detail-container" id="lessonDetail"></div>
+  <script>
+    const lessons = JSON.parse(localStorage.getItem('apprenticeLessons') || '[]');
+    const crafts = JSON.parse(localStorage.getItem('crafts') || '[]');
+    const idx = parseInt(localStorage.getItem('selectedLessonIndex'), 10);
+    const lesson = lessons[idx];
+
+    function findMasterIndex(name) {
+      return crafts.findIndex(m =>
+        m.masterName === name || m.craftName === name
+      );
+    }
+
+    if (!lesson) {
+      document.getElementById('lessonDetail').innerHTML = '<div style="color:#a58c63;font-size:1.15em;text-align:center;">Урокът не е намерен.</div>';
+    } else {
+      document.getElementById('lessonDetail').innerHTML = `
+        <h2>Детайли за урока</h2>
+        <div class="lesson-info-row"><span class="lesson-info-label">Курс/Урок:</span> ${lesson.courseTitle || (lesson.lessonType === 'group' ? 'Групов урок' : 'Индивидуален урок')}</div>
+        <div class="lesson-info-row"><span class="lesson-info-label">Майстор:</span> ${lesson.master || '-'}</div>
+        <div class="lesson-info-row"><span class="lesson-info-label">Дата:</span> ${lesson.date || '-'}</div>
+        <div class="lesson-info-row"><span class="lesson-info-label">Тип:</span> ${lesson.lessonType === 'group' ? 'Групово' : lesson.lessonType === 'individual' ? 'Индивидуално' : '-'}</div>
+        <div class="lesson-info-row"><span class="lesson-info-label">Брой участници:</span> ${lesson.count || '1'}</div>
+        <div class="lesson-info-row"><span class="lesson-info-label">Цена:</span> ${lesson.price || '-'} лв.</div>
+        <div class="lesson-info-row"><span class="lesson-info-label">Статус:</span> ${lesson.status === 'завършен' ? 'Завършен' : 'Текущ'}</div>
+        <div class="lesson-info-row"><span class="lesson-info-label">Коментар:</span> ${lesson.notes || '-'}</div>
+        <div class="lesson-action">
+          <button class="lesson-teacher-link" onclick="goToMaster('${lesson.master || ''}')">Виж профил на майстора</button>
+        </div>
+      `;
+    }
+
+    function goToMaster(masterName) {
+      const idx = findMasterIndex(masterName);
+      if (idx >= 0) {
+        localStorage.setItem('selectedMaster', idx);
+        window.location.href = 'master-public-detail.html';
+      } else {
+        alert("Майсторът не е намерен.");
+      }
+    }
+  </script>
+</body>
+</html>
