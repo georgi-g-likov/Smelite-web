@@ -1,7 +1,7 @@
 package com.smelite.controller;
 
+import com.smelite.dto.AuthRequest;
 import com.smelite.dto.AuthResponse;
-import com.smelite.dto.LoginRequest;
 import com.smelite.dto.RegisterRequest;
 import com.smelite.service.AuthService;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:63342")
 public class AuthController {
 
     private final AuthService authService;
@@ -22,7 +22,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
-        return ResponseEntity.ok(authService.login(request));
+    public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
+        return ResponseEntity.ok(authService.authenticate(request));
     }
 }

@@ -86,22 +86,64 @@
 <body>
   <div class="register-box">
     <h1>Създай профил</h1>
-    <form>
-      <input type="text" placeholder="Име" required />
-      <input type="email" placeholder="Имейл" required />
-      <input type="password" placeholder="Парола" required />
-      <input type="password" placeholder="Потвърди парола" required />
-      <input type="text" placeholder="Град" required />
-      <input type="number" placeholder="Години" min="10" max="100" required />
-      
+    <form id="register-form">
+      <input type="text" name="name" placeholder="Име" required />
+      <input type="email" name="email" placeholder="Имейл" required />
+      <input type="password" name="password" placeholder="Парола" required />
+      <input type="password" name="confirmPassword" placeholder="Потвърди парола" required />
+      <input type="text" name="city" placeholder="Град" required />
+      <input type="number" name="age" placeholder="Години" min="10" max="100" required />
+
       <div class="radio-group">
-        <label><input type="radio" name="type" value="master" required /> Майстор</label>
-        <label><input type="radio" name="type" value="apprentice" required /> Чирак</label>
+        <label><input type="radio" name="role" value="MASTER" required /> Майстор</label>
+        <label><input type="radio" name="role" value="APPRENTICE" required /> Чирак</label>
       </div>
 
       <button type="submit">Регистрация</button>
     </form>
     <a href="login.html" class="link">Вече имаш профил? Вход</a>
   </div>
+  <script>
+    document.getElementById("register-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+
+      if (data.password !== data.confirmPassword) {
+        alert("Паролите не съвпадат!");
+        return;
+      }
+
+      const registerPayload = {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        city: data.city,
+        age: Number(data.age),
+        role: data.role
+      };
+
+      try {
+        const response = await fetch("http://localhost:8080/api/auth/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(registerPayload)
+        });
+
+        if (response.ok) {
+          alert("Регистрацията е успешна!");
+          window.location.href = "index.html";
+        } else {
+          const error = await response.text();
+          alert("Грешка при регистрация: " + error);
+        }
+      } catch (err) {
+        alert("Грешка при връзка със сървъра: " + err.message);
+      }
+    });
+  </script>
 </body>
 </html>
