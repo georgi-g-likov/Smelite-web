@@ -25,6 +25,8 @@ public class Master extends User {
     private int studentCount;
     private int courseCount;
 
+    @OneToOne(mappedBy = "master", cascade = CascadeType.ALL)
+    private CraftProfile craftProfile;
     @Column(length = 2000)
     private String portfolioImages;   // CSV или JSON списък от изображения
 }
